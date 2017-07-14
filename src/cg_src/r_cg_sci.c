@@ -38,6 +38,7 @@ Includes
 #include "r_cg_macrodriver.h"
 #include "r_cg_sci.h"
 /* Start user code for include. Do not edit comment generated here */
+#include "ctrl_usart.h"
 /* End user code. Do not edit comment generated here */
 #include "r_cg_userdefine.h"
 
@@ -163,6 +164,9 @@ MD_STATUS R_SCI1_Serial_Receive(uint8_t * const rx_buf, uint16_t rx_num)
     }
     else
     {
+    	//---------------Modified Here---------------//
+    	U1_Rx_End = No;
+    	//---------------Modified Here---------------//
         g_sci1_rx_count = 0U;
         g_sci1_rx_length = rx_num;
         gp_sci1_rx_address = rx_buf;
@@ -194,7 +198,9 @@ MD_STATUS R_SCI1_Serial_Send(uint8_t * const tx_buf, uint16_t tx_num)
     {
         gp_sci1_tx_address = tx_buf;
         g_sci1_tx_count = tx_num;
-
+        //---------------Modified Here---------------//
+        U1_Tx_End = No;
+        //---------------Modified Here---------------//
         /* Set TXD1 pin */
         PORTD.PMR.BYTE |= 0x08U;
         SCI1.SCR.BIT.TIE = 1U;
@@ -309,6 +315,9 @@ MD_STATUS R_SCI5_Serial_Receive(uint8_t * const rx_buf, uint16_t rx_num)
     }
     else
     {
+    	//---------------Modified Here---------------//
+    	U2_Rx_End = No;
+    	//---------------Modified Here---------------//
         g_sci5_rx_count = 0U;
         g_sci5_rx_length = rx_num;
         gp_sci5_rx_address = rx_buf;
@@ -340,7 +349,9 @@ MD_STATUS R_SCI5_Serial_Send(uint8_t * const tx_buf, uint16_t tx_num)
     {
         gp_sci5_tx_address = tx_buf;
         g_sci5_tx_count = tx_num;
-
+        //---------------Modified Here---------------//
+        U2_Tx_End = No;
+        //---------------Modified Here---------------//
         /* Set TXD5 pin */
         PORTB.PMR.BYTE |= 0x04U;
         SCI5.SCR.BIT.TIE = 1U;

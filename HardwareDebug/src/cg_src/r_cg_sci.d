@@ -35,5 +35,13 @@ src/cg_src/r_cg_sci.obj src/cg_src/r_cg_sci.d: G:\UAV\myproject\Flight\r_bsp\boa
 G:\UAV\myproject\Flight\r_bsp\board/rskrx23t/vecttbl.h:
 src/cg_src/r_cg_sci.obj src/cg_src/r_cg_sci.d: ../src/cg_src/r_cg_sci.h
 ../src/cg_src/r_cg_sci.h:
+src/cg_src/r_cg_sci.obj src/cg_src/r_cg_sci.d: G:\UAV\myproject\Flight\src\SrcUser\ctrl_usart.h
+G:\UAV\myproject\Flight\src\SrcUser\ctrl_usart.h:
+src/cg_src/r_cg_sci.obj src/cg_src/r_cg_sci.d: G:\UAV\myproject\Flight\src\SrcUser\ctrl_basic.h
+G:\UAV\myproject\Flight\src\SrcUser\ctrl_basic.h:
+src/cg_src/r_cg_sci.obj src/cg_src/r_cg_sci.d: C:\PROGRA~2\Renesas\RX\2_6_0/include/math.h
+C:\PROGRA~2\Renesas\RX\2_6_0/include/math.h:
+src/cg_src/r_cg_sci.obj src/cg_src/r_cg_sci.d: C:\PROGRA~2\Renesas\RX\2_6_0/include/string.h
+C:\PROGRA~2\Renesas\RX\2_6_0/include/string.h:
 src/cg_src/r_cg_sci.obj src/cg_src/r_cg_sci.d: ../src/cg_src/r_cg_userdefine.h
 ../src/cg_src/r_cg_userdefine.h:
