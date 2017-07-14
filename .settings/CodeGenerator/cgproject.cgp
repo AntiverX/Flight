@@ -356,15 +356,15 @@
         </DataElement>
       </SerializableData>
       <SerializableData name="Interrput_28">
-        <DataElement key="InusedAs" value="CMI0">
+        <DataElement key="InusedAs" value="">
         </DataElement>
       </SerializableData>
       <SerializableData name="Interrput_29">
-        <DataElement key="InusedAs" value="CMI1">
+        <DataElement key="InusedAs" value="">
         </DataElement>
       </SerializableData>
       <SerializableData name="Interrput_30">
-        <DataElement key="InusedAs" value="">
+        <DataElement key="InusedAs" value="CMI2">
         </DataElement>
       </SerializableData>
       <SerializableData name="Interrput_31">
@@ -3062,6 +3062,8 @@
     </DataElement>
     <DataElement key="GenerateType" value="Merge">
     </DataElement>
+    <DataElement key="FAST_INT_USED" value="False">
+    </DataElement>
   </SerializableData>
   <SerializableData name="e442c8d2-3b9a-42d0-8be8-81eb898f6f62">
     <SerializableData name="DeviceCreadedMacros">
@@ -3357,7 +3359,7 @@
           </DataElement>
           <DataElement key="error" value="NoError">
           </DataElement>
-          <DataElement key="inuse" value="Used">
+          <DataElement key="inuse" value="Unused">
           </DataElement>
         </SerializableData>
         <SerializableData name="CMT1">
@@ -3365,7 +3367,7 @@
           </DataElement>
           <DataElement key="error" value="NoError">
           </DataElement>
-          <DataElement key="inuse" value="Used">
+          <DataElement key="inuse" value="Unused">
           </DataElement>
         </SerializableData>
         <SerializableData name="CMT2">
@@ -3373,7 +3375,7 @@
           </DataElement>
           <DataElement key="error" value="NoError">
           </DataElement>
-          <DataElement key="inuse" value="Unused">
+          <DataElement key="inuse" value="Used">
           </DataElement>
         </SerializableData>
         <SerializableData name="CMT3">
@@ -5958,14 +5960,14 @@
           <SerializableData name="CMT0">
             <DataElement key="visible" value="True">
             </DataElement>
-            <DataElement key="inuse" value="Locked">
+            <DataElement key="inuse" value="Unused">
             </DataElement>
             <SerializableData name="R_CMT0_Create">
               <DataElement key="visible" value="True">
               </DataElement>
               <DataElement key="text" value="R_CMT0_Create">
               </DataElement>
-              <DataElement key="inuse" value="Locked">
+              <DataElement key="inuse" value="Unused">
               </DataElement>
             </SerializableData>
             <SerializableData name="R_CMT0_Start">
@@ -5973,7 +5975,7 @@
               </DataElement>
               <DataElement key="text" value="R_CMT0_Start">
               </DataElement>
-              <DataElement key="inuse" value="Locked">
+              <DataElement key="inuse" value="Unused">
               </DataElement>
             </SerializableData>
             <SerializableData name="R_CMT0_Stop">
@@ -5981,21 +5983,21 @@
               </DataElement>
               <DataElement key="text" value="R_CMT0_Stop">
               </DataElement>
-              <DataElement key="inuse" value="Locked">
+              <DataElement key="inuse" value="Unused">
               </DataElement>
             </SerializableData>
           </SerializableData>
           <SerializableData name="CMT1">
             <DataElement key="visible" value="True">
             </DataElement>
-            <DataElement key="inuse" value="Locked">
+            <DataElement key="inuse" value="Unused">
             </DataElement>
             <SerializableData name="R_CMT1_Create">
               <DataElement key="visible" value="True">
               </DataElement>
               <DataElement key="text" value="R_CMT1_Create">
               </DataElement>
-              <DataElement key="inuse" value="Locked">
+              <DataElement key="inuse" value="Unused">
               </DataElement>
             </SerializableData>
             <SerializableData name="R_CMT1_Start">
@@ -6003,7 +6005,7 @@
               </DataElement>
               <DataElement key="text" value="R_CMT1_Start">
               </DataElement>
-              <DataElement key="inuse" value="Locked">
+              <DataElement key="inuse" value="Unused">
               </DataElement>
             </SerializableData>
             <SerializableData name="R_CMT1_Stop">
@@ -6011,21 +6013,21 @@
               </DataElement>
               <DataElement key="text" value="R_CMT1_Stop">
               </DataElement>
-              <DataElement key="inuse" value="Locked">
+              <DataElement key="inuse" value="Unused">
               </DataElement>
             </SerializableData>
           </SerializableData>
           <SerializableData name="CMT2">
             <DataElement key="visible" value="True">
             </DataElement>
-            <DataElement key="inuse" value="Unused">
+            <DataElement key="inuse" value="Locked">
             </DataElement>
             <SerializableData name="R_CMT2_Create">
               <DataElement key="visible" value="True">
               </DataElement>
               <DataElement key="text" value="R_CMT2_Create">
               </DataElement>
-              <DataElement key="inuse" value="Unused">
+              <DataElement key="inuse" value="Locked">
               </DataElement>
             </SerializableData>
             <SerializableData name="R_CMT2_Start">
@@ -6033,7 +6035,7 @@
               </DataElement>
               <DataElement key="text" value="R_CMT2_Start">
               </DataElement>
-              <DataElement key="inuse" value="Unused">
+              <DataElement key="inuse" value="Locked">
               </DataElement>
             </SerializableData>
             <SerializableData name="R_CMT2_Stop">
@@ -6041,7 +6043,7 @@
               </DataElement>
               <DataElement key="text" value="R_CMT2_Stop">
               </DataElement>
-              <DataElement key="inuse" value="Unused">
+              <DataElement key="inuse" value="Locked">
               </DataElement>
             </SerializableData>
           </SerializableData>
@@ -6086,14 +6088,14 @@
           <SerializableData name="CMT0">
             <DataElement key="visible" value="True">
             </DataElement>
-            <DataElement key="inuse" value="Locked">
+            <DataElement key="inuse" value="Unused">
             </DataElement>
             <SerializableData name="r_cmt_cmi0_interrupt">
               <DataElement key="visible" value="True">
               </DataElement>
               <DataElement key="text" value="r_cmt_cmi0_interrupt">
               </DataElement>
-              <DataElement key="inuse" value="Locked">
+              <DataElement key="inuse" value="Unused">
               </DataElement>
             </SerializableData>
             <SerializableData name="R_CMT0_Create_UserInit">
@@ -6108,14 +6110,14 @@
           <SerializableData name="CMT1">
             <DataElement key="visible" value="True">
             </DataElement>
-            <DataElement key="inuse" value="Locked">
+            <DataElement key="inuse" value="Unused">
             </DataElement>
             <SerializableData name="r_cmt_cmi1_interrupt">
               <DataElement key="visible" value="True">
               </DataElement>
               <DataElement key="text" value="r_cmt_cmi1_interrupt">
               </DataElement>
-              <DataElement key="inuse" value="Locked">
+              <DataElement key="inuse" value="Unused">
               </DataElement>
             </SerializableData>
             <SerializableData name="R_CMT1_Create_UserInit">
@@ -6130,14 +6132,14 @@
           <SerializableData name="CMT2">
             <DataElement key="visible" value="True">
             </DataElement>
-            <DataElement key="inuse" value="Unused">
+            <DataElement key="inuse" value="Locked">
             </DataElement>
             <SerializableData name="r_cmt_cmi2_interrupt">
               <DataElement key="visible" value="True">
               </DataElement>
               <DataElement key="text" value="r_cmt_cmi2_interrupt">
               </DataElement>
-              <DataElement key="inuse" value="Unused">
+              <DataElement key="inuse" value="Locked">
               </DataElement>
             </SerializableData>
             <SerializableData name="R_CMT2_Create_UserInit">
@@ -20993,7 +20995,7 @@
               </DataElement>
               <DataElement key="Attach" value="P94">
               </DataElement>
-              <DataElement key="MutexType" value="NoMutex">
+              <DataElement key="MutexType" value="NoMutex, PinMutex">
               </DataElement>
               <DataElement key="Visible" value="True">
               </DataElement>
@@ -23593,7 +23595,7 @@
               </DataElement>
               <DataElement key="Attach" value="P70">
               </DataElement>
-              <DataElement key="MutexType" value="NoMutex">
+              <DataElement key="MutexType" value="NoMutex, PinMutex">
               </DataElement>
               <DataElement key="Visible" value="True">
               </DataElement>
@@ -23615,7 +23617,7 @@
               </DataElement>
               <DataElement key="Attach" value="PB6">
               </DataElement>
-              <DataElement key="MutexType" value="NoMutex">
+              <DataElement key="MutexType" value="NoMutex, PinMutex">
               </DataElement>
               <DataElement key="Visible" value="True">
               </DataElement>
@@ -24308,7 +24310,7 @@
             </DataElement>
             <DataElement key="Attach" value="P33">
             </DataElement>
-            <DataElement key="MutexType" value="NoMutex">
+            <DataElement key="MutexType" value="NoMutex, PinMutex">
             </DataElement>
             <DataElement key="Visible" value="True">
             </DataElement>
@@ -24344,7 +24346,7 @@
             </DataElement>
             <DataElement key="Attach" value="P32">
             </DataElement>
-            <DataElement key="MutexType" value="NoMutex">
+            <DataElement key="MutexType" value="NoMutex, PinMutex">
             </DataElement>
             <DataElement key="Visible" value="True">
             </DataElement>
@@ -27051,11 +27053,11 @@
     <SerializableData name="RX23T_CMT">
       <SerializableData name="CMT0">
         <SerializableData name="rdoCmtUnused">
-          <DataElement key="Checked" value="False">
+          <DataElement key="Checked" value="True">
           </DataElement>
         </SerializableData>
         <SerializableData name="CMTn_MODULE_USED">
-          <DataElement key="Checked" value="True">
+          <DataElement key="Checked" value="False">
           </DataElement>
         </SerializableData>
         <SerializableData name="CMTn_CLOCK_SELECT_PCLK8">
@@ -27063,7 +27065,7 @@
           </DataElement>
         </SerializableData>
         <SerializableData name="CMTn_CLOCK_SELECT_PCLK32">
-          <DataElement key="Checked" value="False">
+          <DataElement key="Checked" value="True">
           </DataElement>
         </SerializableData>
         <SerializableData name="CMTn_CLOCK_SELECT_PCLK128">
@@ -27071,11 +27073,11 @@
           </DataElement>
         </SerializableData>
         <SerializableData name="CMTn_CLOCK_SELECT_PCLK512">
-          <DataElement key="Checked" value="True">
+          <DataElement key="Checked" value="False">
           </DataElement>
         </SerializableData>
         <SerializableData name="CMTn_INTERVAL_VALUE">
-          <DataElement key="Text" value="100">
+          <DataElement key="Text" value="1">
           </DataElement>
         </SerializableData>
         <SerializableData name="CMTn_INTERVAL_UNIT">
@@ -27537,11 +27539,11 @@
       </SerializableData>
       <SerializableData name="CMT1">
         <SerializableData name="rdoCmtUnused">
-          <DataElement key="Checked" value="False">
+          <DataElement key="Checked" value="True">
           </DataElement>
         </SerializableData>
         <SerializableData name="CMTn_MODULE_USED">
-          <DataElement key="Checked" value="True">
+          <DataElement key="Checked" value="False">
           </DataElement>
         </SerializableData>
         <SerializableData name="CMTn_CLOCK_SELECT_PCLK8">
@@ -28023,19 +28025,19 @@
       </SerializableData>
       <SerializableData name="CMT2">
         <SerializableData name="rdoCmtUnused">
-          <DataElement key="Checked" value="True">
+          <DataElement key="Checked" value="False">
           </DataElement>
         </SerializableData>
         <SerializableData name="CMTn_MODULE_USED">
-          <DataElement key="Checked" value="False">
-          </DataElement>
-        </SerializableData>
-        <SerializableData name="CMTn_CLOCK_SELECT_PCLK8">
           <DataElement key="Checked" value="True">
           </DataElement>
         </SerializableData>
-        <SerializableData name="CMTn_CLOCK_SELECT_PCLK32">
+        <SerializableData name="CMTn_CLOCK_SELECT_PCLK8">
           <DataElement key="Checked" value="False">
+          </DataElement>
+        </SerializableData>
+        <SerializableData name="CMTn_CLOCK_SELECT_PCLK32">
+          <DataElement key="Checked" value="True">
           </DataElement>
         </SerializableData>
         <SerializableData name="CMTn_CLOCK_SELECT_PCLK128">
@@ -28047,13 +28049,13 @@
           </DataElement>
         </SerializableData>
         <SerializableData name="CMTn_INTERVAL_VALUE">
-          <DataElement key="Text" value="100">
+          <DataElement key="Text" value="1">
           </DataElement>
         </SerializableData>
         <SerializableData name="CMTn_INTERVAL_UNIT">
           <DataElement key="ContentItemCount" value="4">
           </DataElement>
-          <DataElement key="SelectedContentItem" value="us">
+          <DataElement key="SelectedContentItem" value="ms">
           </DataElement>
           <SerializableData name="ContentItem1">
             <DataElement key="Pin" value="">
@@ -29890,7 +29892,7 @@
             </DataElement>
             <DataElement key="Attach" value="P94">
             </DataElement>
-            <DataElement key="MutexType" value="NoMutex">
+            <DataElement key="MutexType" value="NoMutex, PinMutex">
             </DataElement>
             <DataElement key="Visible" value="True">
             </DataElement>
@@ -33040,7 +33042,7 @@
             </DataElement>
             <DataElement key="Attach" value="PB5">
             </DataElement>
-            <DataElement key="MutexType" value="NoMutex">
+            <DataElement key="MutexType" value="NoMutex, PinMutex">
             </DataElement>
             <DataElement key="Visible" value="True">
             </DataElement>
@@ -33090,7 +33092,7 @@
             </DataElement>
             <DataElement key="Attach" value="PB6">
             </DataElement>
-            <DataElement key="MutexType" value="NoMutex">
+            <DataElement key="MutexType" value="NoMutex, PinMutex">
             </DataElement>
             <DataElement key="Visible" value="True">
             </DataElement>
@@ -33140,7 +33142,7 @@
             </DataElement>
             <DataElement key="Attach" value="PB5">
             </DataElement>
-            <DataElement key="MutexType" value="NoMutex">
+            <DataElement key="MutexType" value="NoMutex, PinMutex">
             </DataElement>
             <DataElement key="Visible" value="True">
             </DataElement>
@@ -33190,7 +33192,7 @@
             </DataElement>
             <DataElement key="Attach" value="PB6">
             </DataElement>
-            <DataElement key="MutexType" value="NoMutex">
+            <DataElement key="MutexType" value="NoMutex, PinMutex">
             </DataElement>
             <DataElement key="Visible" value="True">
             </DataElement>
@@ -33240,7 +33242,7 @@
             </DataElement>
             <DataElement key="Attach" value="PB5">
             </DataElement>
-            <DataElement key="MutexType" value="NoMutex">
+            <DataElement key="MutexType" value="NoMutex, PinMutex">
             </DataElement>
             <DataElement key="Visible" value="True">
             </DataElement>
@@ -33290,7 +33292,7 @@
             </DataElement>
             <DataElement key="Attach" value="PB6">
             </DataElement>
-            <DataElement key="MutexType" value="NoMutex">
+            <DataElement key="MutexType" value="NoMutex, PinMutex">
             </DataElement>
             <DataElement key="Visible" value="True">
             </DataElement>
@@ -33483,7 +33485,7 @@
               </DataElement>
               <DataElement key="Attach" value="PB7">
               </DataElement>
-              <DataElement key="MutexType" value="NoMutex">
+              <DataElement key="MutexType" value="NoMutex, PinMutex">
               </DataElement>
               <DataElement key="Visible" value="True">
               </DataElement>
@@ -34525,7 +34527,7 @@
               </DataElement>
               <DataElement key="Attach" value="PB7">
               </DataElement>
-              <DataElement key="MutexType" value="NoMutex">
+              <DataElement key="MutexType" value="NoMutex, PinMutex">
               </DataElement>
               <DataElement key="Visible" value="True">
               </DataElement>
@@ -82332,7 +82334,7 @@
             </DataElement>
             <DataElement key="Attach" value="P70">
             </DataElement>
-            <DataElement key="MutexType" value="NoMutex">
+            <DataElement key="MutexType" value="NoMutex, PinMutex">
             </DataElement>
             <DataElement key="Visible" value="True">
             </DataElement>
@@ -83874,6 +83876,12 @@
         </SerializableData>
       </SerializableData>
       <SerializableData name="CMT3">
+        <SerializableData name="PCLKB">
+          <DataElement key="DataValue" value="40000">
+          </DataElement>
+        </SerializableData>
+      </SerializableData>
+      <SerializableData name="ICU">
         <SerializableData name="PCLKB">
           <DataElement key="DataValue" value="40000">
           </DataElement>

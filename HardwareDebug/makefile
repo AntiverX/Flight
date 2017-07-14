@@ -118,7 +118,7 @@ all: Flgiht.mot
 # Tool invocations
 Flgiht.mot: $(LINKER_OUTPUT_OUTPUTS)
 	@echo 'Invoking: Converter'
-	rlink   "D:\workspace\Flight\HardwareDebug\Flgiht.abs" -form=stype  -output="D:\workspace\Flight\HardwareDebug\Flgiht.mot" -nomessage
+	rlink   "G:\UAV\myproject\Flight\HardwareDebug\Flgiht.abs" -form=stype  -output="G:\UAV\myproject\Flight\HardwareDebug\Flgiht.mot" -nomessage
 	@echo 'Finished building target:'
 	@echo.
 	$(MAKE) --no-print-directory post-build
@@ -126,7 +126,7 @@ Flgiht.mot: $(LINKER_OUTPUT_OUTPUTS)
 Flgiht.abs: $(OBJS) $(LIBRARY_GENERATOR_OUTPUTTYPE_OUTPUTS) $(ALL_ASMS) 
 	@echo 'Invoking: Linker'
 	@echo 'Building target:'
-	rlink  -subcommand="LinkerSubCommand.tmp"  -library="D:\workspace\Flight\HardwareDebug\Flgiht.lib" -noprelink -list="Flgiht.map" -show -nooptimize -debug -output="D:\workspace\Flight\HardwareDebug\Flgiht.abs" -rom=D=R,PFRAM=RPFRAM,D_1=R_1,D_2=R_2 -nocompress -vect=_undefined_interrupt_source_isr -nomessage -nologo
+	rlink  -subcommand="LinkerSubCommand.tmp"  -library="G:\UAV\myproject\Flight\HardwareDebug\Flgiht.lib" -noprelink -list="Flgiht.map" -show -nooptimize -debug -output="G:\UAV\myproject\Flight\HardwareDebug\Flgiht.abs" -rom=D=R,PFRAM=RPFRAM,D_1=R_1,D_2=R_2 -nocompress -vect=_undefined_interrupt_source_isr -nomessage -nologo
 	@echo 'Finished building:'
 	@echo.
 
@@ -270,7 +270,7 @@ endif
 
 post-build:
 	@echo.
-	-C:\Renesas\E2_STU~1\DEBUGC~1\RENESA~1.EXE Flgiht.abs Flgiht.x 
+	-G:\UAV\Renesas\e2_studio\DebugComp\renesas_cc_converter.exe Flgiht.abs Flgiht.x 
 	@echo.
 
 .PHONY: all clean dependents

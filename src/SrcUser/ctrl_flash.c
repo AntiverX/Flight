@@ -133,9 +133,6 @@ extern void Key_PowerOn_Event_Handle(void)
 extern YesNo_t Save_RC_Offset_To_Flash(int16 OF_Rol, int16 OF_Pit)
 {
     static RC_Offset_t RC_Offset_Cache;
-    uint16 NeedWordNum = 0;
-    uint32_t* pRC_Offset = 0;
-    uint16 i;
     flash_err_t err;
     
     RC_Offset_Cache.IsSaved = RC_OF_SAVED;
@@ -153,8 +150,7 @@ extern YesNo_t Save_RC_Offset_To_Flash(int16 OF_Rol, int16 OF_Pit)
     	return No;
 
     // 3 Write to Flash 写数据到 Flash 中
-    pRC_Offset = (uint32_t*)&RC_Offset_Cache;
-    err = R_FLASH_Write(pRC_Offset, (uint32_t)USER_FLASH_ADDR, sizeof(RC_Offset_t));
+    err = R_FLASH_Write((uint32_t)&RC_Offset_Cache, (uint32_t)USER_FLASH_ADDR, sizeof(RC_Offset_t));
     if(FLASH_SUCCESS != err)
     	return No;
     return Yes;

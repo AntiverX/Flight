@@ -79,8 +79,7 @@ void R_Systeminit(void)
     /* Set peripheral settings */
     R_CGC_Create();
     R_PORT_Create();
-    R_CMT0_Create();
-    R_CMT1_Create();
+    R_CMT2_Create();
     R_SCI1_Create();
     R_SCI5_Create();
 

@@ -13,37 +13,37 @@ src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: ../src/SrcUser/ctrl_control.h
 ../src/SrcUser/ctrl_control.h:
 src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: ../src/SrcUser/ctrl_pid.h
 ../src/SrcUser/ctrl_pid.h:
-src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: D:\workspace\Flgiht\src\cg_src\r_cg_macrodriver.h
-D:\workspace\Flgiht\src\cg_src\r_cg_macrodriver.h:
-src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: D:\workspace\Flgiht\r_bsp\platform.h
-D:\workspace\Flgiht\r_bsp\platform.h:
-src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: D:\workspace\Flgiht\r_bsp\./board/rskrx23t/r_bsp.h
-D:\workspace\Flgiht\r_bsp\./board/rskrx23t/r_bsp.h:
-src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: D:\workspace\Flgiht\r_bsp\mcu/all/r_bsp_common.h
-D:\workspace\Flgiht\r_bsp\mcu/all/r_bsp_common.h:
-src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: D:\workspace\Flgiht\r_config\r_bsp_config.h
-D:\workspace\Flgiht\r_config\r_bsp_config.h:
-src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: D:\workspace\Flgiht\r_bsp\mcu/rx23t/register_access/iodefine.h
-D:\workspace\Flgiht\r_bsp\mcu/rx23t/register_access/iodefine.h:
-src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: D:\workspace\Flgiht\r_bsp\mcu/rx23t/mcu_info.h
-D:\workspace\Flgiht\r_bsp\mcu/rx23t/mcu_info.h:
-src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: D:\workspace\Flgiht\r_bsp\mcu/rx23t/mcu_locks.h
-D:\workspace\Flgiht\r_bsp\mcu/rx23t/mcu_locks.h:
-src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: D:\workspace\Flgiht\r_bsp\mcu/rx23t/locking.h
-D:\workspace\Flgiht\r_bsp\mcu/rx23t/locking.h:
-src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: D:\workspace\Flgiht\r_bsp\mcu/rx23t/cpu.h
-D:\workspace\Flgiht\r_bsp\mcu/rx23t/cpu.h:
-src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: D:\workspace\Flgiht\r_bsp\mcu/rx23t/mcu_init.h
-D:\workspace\Flgiht\r_bsp\mcu/rx23t/mcu_init.h:
-src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: D:\workspace\Flgiht\r_bsp\mcu/rx23t/mcu_interrupts.h
-D:\workspace\Flgiht\r_bsp\mcu/rx23t/mcu_interrupts.h:
-src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: D:\workspace\Flgiht\r_bsp\board/rskrx23t/rskrx23t.h
-D:\workspace\Flgiht\r_bsp\board/rskrx23t/rskrx23t.h:
-src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: D:\workspace\Flgiht\r_bsp\board/rskrx23t/hwsetup.h
-D:\workspace\Flgiht\r_bsp\board/rskrx23t/hwsetup.h:
-src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: D:\workspace\Flgiht\r_bsp\board/rskrx23t/lowsrc.h
-D:\workspace\Flgiht\r_bsp\board/rskrx23t/lowsrc.h:
-src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: D:\workspace\Flgiht\r_bsp\board/rskrx23t/vecttbl.h
-D:\workspace\Flgiht\r_bsp\board/rskrx23t/vecttbl.h:
-src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: D:\workspace\Flgiht\src\cg_src\r_cg_port.h
-D:\workspace\Flgiht\src\cg_src\r_cg_port.h:
+src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: G:\UAV\myproject\Flight\src\cg_src\r_cg_macrodriver.h
+G:\UAV\myproject\Flight\src\cg_src\r_cg_macrodriver.h:
+src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: G:\UAV\myproject\Flight\r_bsp\platform.h
+G:\UAV\myproject\Flight\r_bsp\platform.h:
+src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: G:\UAV\myproject\Flight\r_bsp\./board/rskrx23t/r_bsp.h
+G:\UAV\myproject\Flight\r_bsp\./board/rskrx23t/r_bsp.h:
+src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: G:\UAV\myproject\Flight\r_bsp\mcu/all/r_bsp_common.h
+G:\UAV\myproject\Flight\r_bsp\mcu/all/r_bsp_common.h:
+src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: G:\UAV\myproject\Flight\r_config\r_bsp_config.h
+G:\UAV\myproject\Flight\r_config\r_bsp_config.h:
+src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: G:\UAV\myproject\Flight\r_bsp\mcu/rx23t/register_access/iodefine.h
+G:\UAV\myproject\Flight\r_bsp\mcu/rx23t/register_access/iodefine.h:
+src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: G:\UAV\myproject\Flight\r_bsp\mcu/rx23t/mcu_info.h
+G:\UAV\myproject\Flight\r_bsp\mcu/rx23t/mcu_info.h:
+src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: G:\UAV\myproject\Flight\r_bsp\mcu/rx23t/mcu_locks.h
+G:\UAV\myproject\Flight\r_bsp\mcu/rx23t/mcu_locks.h:
+src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: G:\UAV\myproject\Flight\r_bsp\mcu/rx23t/locking.h
+G:\UAV\myproject\Flight\r_bsp\mcu/rx23t/locking.h:
+src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: G:\UAV\myproject\Flight\r_bsp\mcu/rx23t/cpu.h
+G:\UAV\myproject\Flight\r_bsp\mcu/rx23t/cpu.h:
+src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: G:\UAV\myproject\Flight\r_bsp\mcu/rx23t/mcu_init.h
+G:\UAV\myproject\Flight\r_bsp\mcu/rx23t/mcu_init.h:
+src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: G:\UAV\myproject\Flight\r_bsp\mcu/rx23t/mcu_interrupts.h
+G:\UAV\myproject\Flight\r_bsp\mcu/rx23t/mcu_interrupts.h:
+src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: G:\UAV\myproject\Flight\r_bsp\board/rskrx23t/rskrx23t.h
+G:\UAV\myproject\Flight\r_bsp\board/rskrx23t/rskrx23t.h:
+src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: G:\UAV\myproject\Flight\r_bsp\board/rskrx23t/hwsetup.h
+G:\UAV\myproject\Flight\r_bsp\board/rskrx23t/hwsetup.h:
+src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: G:\UAV\myproject\Flight\r_bsp\board/rskrx23t/lowsrc.h
+G:\UAV\myproject\Flight\r_bsp\board/rskrx23t/lowsrc.h:
+src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: G:\UAV\myproject\Flight\r_bsp\board/rskrx23t/vecttbl.h
+G:\UAV\myproject\Flight\r_bsp\board/rskrx23t/vecttbl.h:
+src/SrcUser/ctrl_key.obj src/SrcUser/ctrl_key.d: G:\UAV\myproject\Flight\src\cg_src\r_cg_port.h
+G:\UAV\myproject\Flight\src\cg_src\r_cg_port.h:

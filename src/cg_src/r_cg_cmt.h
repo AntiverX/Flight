@@ -68,8 +68,7 @@ Macro definitions (Register bit)
 /***********************************************************************************************************************
 Macro definitions
 ***********************************************************************************************************************/
-#define _1E84_CMT0_CMCOR_VALUE                  (0x1E84U) /* Compare match value */
-#define _1E84_CMT1_CMCOR_VALUE                  (0x1E84U) /* Compare match value */
+#define _04E1_CMT2_CMCOR_VALUE                  (0x04E1U) /* Compare match value */
 
 /***********************************************************************************************************************
 Typedef definitions
@@ -78,12 +77,9 @@ Typedef definitions
 /***********************************************************************************************************************
 Global functions
 ***********************************************************************************************************************/
-void R_CMT0_Create(void);
-void R_CMT0_Start(void);
-void R_CMT0_Stop(void);
-void R_CMT1_Create(void);
-void R_CMT1_Start(void);
-void R_CMT1_Stop(void);
+void R_CMT2_Create(void);
+void R_CMT2_Start(void);
+void R_CMT2_Stop(void);
 
 /* Start user code for function. Do not edit comment generated here */
 /* End user code. Do not edit comment generated here */

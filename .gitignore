@@ -1,3 +1,11 @@
+HardwareDebug/Flgiht.abs
+.info
+.info
+.settings/conflictresources.xml
+.settings/conflictresources.xml
+HardwareDebug/Flgiht.lib
+HardwareDebug/Flgiht.map
+
 # Prerequisites
 *.d
 

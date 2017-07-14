@@ -61,14 +61,12 @@ extern YesNo_t Msg_Smp_To_Ctrl_Update(void)
                 UpdateFlag = Yes;
                 New_Pkg_Offset = 0;
                 New_Pkg_Length = sizeof(Msg_SmpToCtrl_t);
-                //----------------------------------Modified Here.-----------------------------------------//
-//                LED_R_IO_TOOGLE;
+                LED_R_IO_TOOGLE;
             }
             // package length is ok, but start or end not
             else
             {
-            	//----------------------------------Modified Here.-----------------------------------------//
-//                LED_R_IO_ON;
+            	LED_R_IO_ON;
                 
                 // maybe everything is ok last time, but error occurred this time
                 if(0 == New_Pkg_Offset)
@@ -101,8 +99,7 @@ extern YesNo_t Msg_Smp_To_Ctrl_Update(void)
         // package length error, reset communication
         else
         {
-        	//----------------------------------Modified Here.-----------------------------------------//
-//            LED_R_IO_ON;
+        	LED_R_IO_ON;
             New_Pkg_Offset = 0;
             New_Pkg_Length = sizeof(Msg_SmpToCtrl_t);
         }
