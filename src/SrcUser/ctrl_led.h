@@ -9,7 +9,7 @@
 #ifndef __SMP_LED_H__
 #define __SMP_LED_H__
 
-
+#include "iodefine.h"
 
 #define LED_R_IO_LEVEL_ON       GPIO_PIN_RESET
 #define LED_R_IO_LEVEL_OFF      GPIO_PIN_SET
@@ -17,13 +17,15 @@
 #define LED_B_IO_LEVEL_ON       GPIO_PIN_RESET
 #define LED_B_IO_LEVEL_OFF      GPIO_PIN_SET
 
-#define LED_R_IO_ON             HAL_GPIO_WritePin(LED_R_GPIO_Port, LED_R_Pin, LED_R_IO_LEVEL_ON)
-#define LED_R_IO_OFF            HAL_GPIO_WritePin(LED_R_GPIO_Port, LED_R_Pin, LED_R_IO_LEVEL_OFF)
-#define LED_R_IO_TOOGLE         HAL_GPIO_TogglePin(LED_R_GPIO_Port, LED_R_Pin)
+#define LED_R_IO_ON             PORTA.PODR.BIT.B3 = 1
+#define LED_R_IO_OFF            PORTA.PODR.BIT.B3 = 0
+#define LED_R_IO_TOOGLE         PORTA.PODR.BIT.B3 = ~PORTA.PODR.BIT.B3
 
-#define LED_B_IO_ON             HAL_GPIO_WritePin(LED_B_GPIO_Port, LED_B_Pin, LED_B_IO_LEVEL_ON)
-#define LED_B_IO_OFF            HAL_GPIO_WritePin(LED_B_GPIO_Port, LED_B_Pin, LED_B_IO_LEVEL_OFF)
-#define LED_B_IO_TOOGLE         HAL_GPIO_TogglePin(LED_B_GPIO_Port, LED_B_Pin)
+#define LED_B_IO_ON             PORT9.PODR.BIT.B4 = 1
+#define LED_B_IO_OFF            PORT9.PODR.BIT.B4 = 0
+#define LED_B_IO_TOOGLE         PORT9.PODR.BIT.B4 =  ~PORT9.PODR.BIT.B4
+
+
 
 #endif  // __SMP_LED_H__
 

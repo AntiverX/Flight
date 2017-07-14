@@ -41,9 +41,10 @@ void abort(void);
 #include "r_cg_port.h"
 #include "r_cg_cmt.h"
 #include "r_cg_sci.h"
+/* Start user code for include. Do not edit comment generated here */
 #include "ctrl_usart.h"
 #include "ctrl_fmu.h"
-/* Start user code for include. Do not edit comment generated here */
+#include "ctrl_smp.h"
 /* End user code. Do not edit comment generated here */
 #include "r_cg_userdefine.h"
 
@@ -52,16 +53,17 @@ void R_MAIN_UserInit(void)
     /* Start user code. Do not edit comment generated here */
 	    R_SCI1_Create();
 	    R_SCI5_Create();
-
+	    R_CMT2_Start();						// 启动毫秒定时器
 	    SysCtrl_Msg_Ctrl_To_FMU_Init();     // 初始化控制板发送给飞控的信息
 	    Msg_Ctrl_To_Smp_Init();             // 初始化控制板发送给采集板的信息
 
 	    PID_Parameter_Init();               // 系统PID参数初始化
-	    Dbg_PID_Cache_Init();               // PID调试缓存值初始化
+	    //Dbg_PID_Cache_Init();               // PID调试缓存值初始化
 	    Usart_Rx_Buf_Init ();               // 串口接收缓存区初始化
 
 	    Update_Key_PowerOn_Value();         // 获取按键系统上电时的状态
 	    Update_Encoder_PowerOn_Value();     // 获取编码器在系统上电时的初始状态
+
 	    SysDelay_ms(1000);                  // 延时等待系统稳定
 
 	    SysCtrl_Init_Find_Start_Point();    // 初始化找起点的数据记录
@@ -76,7 +78,7 @@ void R_MAIN_UserInit(void)
 	R_SCI1_Start();
 	R_SCI5_Start();
 
-	//Key_PowerOn_Event_Handle();//保存遥控器微调参数,需要保存到flash中，暂未定义
+	Key_PowerOn_Event_Handle();//保存遥控器微调参数,需要保存到flash中
     /* End user code. Do not edit comment generated here */
 }
 

@@ -7,8 +7,7 @@
 */
 
 #include "ctrl_fmu.h"
-//----------------------------------Modified Here.-----------------------------------------//
-//#include "ctrl_led.h"
+#include "ctrl_led.h"
 #include "ctrl_flash.h"
 #include "ctrl_pid.h"
 #include "ctrl_control.h"
@@ -62,17 +61,12 @@ extern YesNo_t Msg_FMU_To_Ctrl_Update(void)
                 UpdateFlag = Yes;                           // 成功接收到数据包
                 New_Pkg_Offset = 0;                         // 下次接收的偏移量为 0
                 New_Pkg_Length = sizeof(Msg_FMUToCtrl_t);   // 下次期望接收一个完整的数据包
-                //----------------------------------Modified Here.-----------------------------------------//
-                R_CMT0_Start();
-                //LED_B_IO_TOOGLE;                            // 蓝色 LED 状态翻转一次(若通信正常 看到蓝色 LED 在闪烁)
+                LED_B_IO_TOOGLE;                            // 蓝色 LED 状态翻转一次(若通信正常 看到蓝色 LED 在闪烁)
             }
             // 帧长正确 但是帧头或帧尾至少有个出错
             else
             {
-            	//----------------------------------Modified Here.-----------------------------------------//
-                R_CMT0_Stop();
-                PORT9.PODR.BIT.B4 = 1;
-            	//LED_B_IO_ON;
+            	LED_B_IO_ON;
                 // 或许上次接收的数据包还正确，但是目前发生了错误
                 if(0 == New_Pkg_Offset)
                 {
@@ -106,10 +100,7 @@ extern YesNo_t Msg_FMU_To_Ctrl_Update(void)
         // 接收的长度和期望的不一致，重新接收
         else
         {
-        	//----------------------------------Modified Here.-----------------------------------------//
-        	R_CMT0_Stop();
-        	PORT9.PODR.BIT.B4 = 1;
-        	//LED_B_IO_ON;
+        	LED_B_IO_ON;
             New_Pkg_Offset = 0;
             New_Pkg_Length = sizeof(Msg_FMUToCtrl_t);
         }

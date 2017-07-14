@@ -38,6 +38,9 @@ Includes
 #include "r_cg_macrodriver.h"
 #include "r_cg_cmt.h"
 /* Start user code for include. Do not edit comment generated here */
+#include "ctrl_basic.h"
+#include "ctrl_control.h"
+#include "ctrl_drone_status.h"
 /* End user code. Do not edit comment generated here */
 #include "r_cg_userdefine.h"
 
@@ -48,37 +51,26 @@ Global variables and functions
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
-* Function Name: r_cmt_cmi0_interrupt
+* Function Name: r_cmt_cmi2_interrupt
 * Description  : None
 * Arguments    : None
 * Return Value : None
 ***********************************************************************************************************************/
-#if FAST_INTERRUPT_VECTOR == VECT_CMT0_CMI0
-#pragma interrupt r_cmt_cmi0_interrupt(vect=VECT(CMT0,CMI0),fint)
+#if FAST_INTERRUPT_VECTOR == VECT_CMT2_CMI2
+#pragma interrupt r_cmt_cmi2_interrupt(vect=VECT(CMT2,CMI2),fint)
 #else
-#pragma interrupt r_cmt_cmi0_interrupt(vect=VECT(CMT0,CMI0))
+#pragma interrupt r_cmt_cmi2_interrupt(vect=VECT(CMT2,CMI2))
 #endif
-static void r_cmt_cmi0_interrupt(void)
+static void r_cmt_cmi2_interrupt(void)
 {
     /* Start user code. Do not edit comment generated here */
-	PORT9.PODR.BIT.B4 =  ~PORT9.PODR.BIT.B4;//LED_B_FLASH
-    /* End user code. Do not edit comment generated here */
-}
-/***********************************************************************************************************************
-* Function Name: r_cmt_cmi1_interrupt
-* Description  : None
-* Arguments    : None
-* Return Value : None
-***********************************************************************************************************************/
-#if FAST_INTERRUPT_VECTOR == VECT_CMT1_CMI1
-#pragma interrupt r_cmt_cmi1_interrupt(vect=VECT(CMT1,CMI1),fint)
-#else
-#pragma interrupt r_cmt_cmi1_interrupt(vect=VECT(CMT1,CMI1))
-#endif
-static void r_cmt_cmi1_interrupt(void)
-{
-    /* Start user code. Do not edit comment generated here */
-	PORTA.PODR.BIT.B3 = ~PORTA.PODR.BIT.B3; //LED_R_FLASH
+	Sys_ms++;
+	SysDelay_ms_Cnt++;
+	Drone_Unlock_ms++;
+	if(Demo_LostInfo.Lost_ms < LOST_CNT_MAX+1)
+		Demo_LostInfo.Lost_ms++;
+	if(FindStartPoint_ms_Left > 0)
+		 FindStartPoint_ms_Left--;
     /* End user code. Do not edit comment generated here */
 }
 
