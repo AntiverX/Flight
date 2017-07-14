@@ -1,0 +1,1098 @@
+Renesas Optimizing Linker (W2.06.00 )             14-Jul-2017 17:21:07
+
+*** Options ***
+
+-subcommand=LinkerSubCommand.tmp
+-input="./r_bsp/board/rskrx23t/dbsct.obj"
+-input="./r_bsp/board/rskrx23t/hwsetup.obj"
+-input="./r_bsp/board/rskrx23t/lowlvl.obj"
+-input="./r_bsp/board/rskrx23t/lowsrc.obj"
+-input="./r_bsp/board/rskrx23t/resetprg.obj"
+-input="./r_bsp/board/rskrx23t/sbrk.obj"
+-input="./r_bsp/board/rskrx23t/vecttbl.obj"
+-input="./r_bsp/mcu/all/r_bsp_common.obj"
+-input="./r_bsp/mcu/rx23t/cpu.obj"
+-input="./r_bsp/mcu/rx23t/locking.obj"
+-input="./r_bsp/mcu/rx23t/mcu_clocks.obj"
+-input="./r_bsp/mcu/rx23t/mcu_init.obj"
+-input="./r_bsp/mcu/rx23t/mcu_interrupts.obj"
+-input="./r_bsp/mcu/rx23t/mcu_locks.obj"
+-input="./r_flash_rx/src/flash_type_1/r_codeflash.obj"
+-input="./r_flash_rx/src/flash_type_1/r_codeflash_extra.obj"
+-input="./r_flash_rx/src/flash_type_1/r_dataflash.obj"
+-input="./r_flash_rx/src/flash_type_1/r_flash_type1.obj"
+-input="./r_flash_rx/src/flash_type_1/r_flash_utils.obj"
+-input="./r_flash_rx/src/flash_type_2/r_flash_type2.obj"
+-input="./r_flash_rx/src/flash_type_3/r_flash_type3.obj"
+-input="./r_flash_rx/src/flash_type_4/r_flash_type4.obj"
+-input="./r_flash_rx/src/r_flash_rx.obj"
+-input="./src/Flgiht.obj"
+-input="./src/SrcUser/ctrl_basic.obj"
+-input="./src/SrcUser/ctrl_beep.obj"
+-input="./src/SrcUser/ctrl_control.obj"
+-input="./src/SrcUser/ctrl_debug.obj"
+-input="./src/SrcUser/ctrl_drone_status.obj"
+-input="./src/SrcUser/ctrl_encoder.obj"
+-input="./src/SrcUser/ctrl_flash.obj"
+-input="./src/SrcUser/ctrl_fmu.obj"
+-input="./src/SrcUser/ctrl_key.obj"
+-input="./src/SrcUser/ctrl_led.obj"
+-input="./src/SrcUser/ctrl_map.obj"
+-input="./src/SrcUser/ctrl_pid.obj"
+-input="./src/SrcUser/ctrl_serial_graph.obj"
+-input="./src/SrcUser/ctrl_smp.obj"
+-input="./src/SrcUser/ctrl_two_sta_dev.obj"
+-input="./src/SrcUser/ctrl_usart.obj"
+-input="./src/cg_src/r_cg_cgc.obj"
+-input="./src/cg_src/r_cg_cgc_user.obj"
+-input="./src/cg_src/r_cg_cmt.obj"
+-input="./src/cg_src/r_cg_cmt_user.obj"
+-input="./src/cg_src/r_cg_hardware_setup.obj"
+-input="./src/cg_src/r_cg_port.obj"
+-input="./src/cg_src/r_cg_port_user.obj"
+-input="./src/cg_src/r_cg_sci.obj"
+-input="./src/cg_src/r_cg_sci_user.obj"
+-start=SU,SI,B_1,R_1,B_2,R_2,B,R,RPFRAM/04,C_1,C_2,C,C$*,D*,W*,L,P*/0FFFE0000,EXCEPTVECT/0FFFFFF80,RESETVECT/0FFFFFFFC
+-library=D:\workspace\Flgiht\HardwareDebug\Flgiht.lib
+-noprelink
+-list=Flgiht.map
+-show
+-nooptimize
+-debug
+-output=D:\workspace\Flgiht\HardwareDebug\Flgiht.abs
+-rom=D=R,PFRAM=RPFRAM,D_1=R_1,D_2=R_2
+-nocompress
+-vect=_undefined_interrupt_source_isr
+-nomessage
+-nologo
+
+*** Error information ***
+
+W0561014:License manager is not installed
+
+*** Mapping List ***
+
+SECTION                            START      END         SIZE   ALIGN
+
+SU
+                                  00000004  00000403       400   4
+SI
+                                  00000404  00000603       200   4
+B_1
+                                  00000604  0000062b        28   1
+R_1
+                                  0000062c  00000d83       758   1
+B_2
+                                  00000d84  00000da1        1e   2
+R_2
+                                  00000da2  00000dd7        36   2
+B
+                                  00000dd8  000013a3       5cc   4
+R
+                                  000013a4  00001ab3       710   4
+RPFRAM
+                                  00001ab4  000022f9       846   1
+C_1
+                                  fffe0000  fffe0000         0   1
+C_2
+                                  fffe0000  fffe0007         8   2
+C
+                                  fffe0008  fffe007f        78   4
+C$DSEC
+                                  fffe0080  fffe00a3        24   4
+C$BSEC
+                                  fffe00a4  fffe00bb        18   4
+C$VECT
+                                  fffe00bc  fffe04bb       400   4
+D
+                                  fffe04bc  fffe0bcb       710   4
+D_1
+                                  fffe0bcc  fffe1323       758   1
+D_2
+                                  fffe1324  fffe1359        36   2
+W
+                                  fffe135a  fffe135a         0   1
+W_1
+                                  fffe135a  fffe135a         0   1
+W_2
+                                  fffe135a  fffe135a         0   1
+L
+                                  fffe135c  fffe13a1        46   4
+P
+                                  fffe13a2  fffe3ded      2a4c   1
+PFRAM
+                                  fffe3dee  fffe4633       846   1
+EXCEPTVECT
+                                  ffffff80  fffffffb        7c   4
+RESETVECT
+                                  fffffffc  ffffffff         4   4
+
+*** Symbol List ***
+
+SECTION=
+FILE=                               START        END    SIZE
+  SYMBOL                            ADDR        SIZE    INFO      COUNTS  OPT
+
+SECTION=SU
+FILE=.\r_bsp\board\rskrx23t\resetprg.obj
+                                  00000004  00000403       400
+
+SECTION=SI
+FILE=.\r_bsp\board\rskrx23t\resetprg.obj
+                                  00000404  00000603       200
+
+SECTION=B_1
+FILE=.\r_bsp\board\rskrx23t\lowsrc.obj
+                                  00000604  0000062b        28
+  _flmod
+                                  00000604        14   data ,g         3
+  _sml_buf
+                                  00000618        14   data ,g         0
+
+SECTION=R_1
+FILE=.\src\SrcUser\ctrl_usart.obj
+                                  0000062c  00000d33       708
+  _U1TxBuf
+                                  0000062c       12c   data ,g         0
+  _U1RxBuf
+                                  00000758       12c   data ,g         2
+  _U2TxBuf
+                                  00000884       12c   data ,g         0
+  _U2RxBuf
+                                  000009b0       12c   data ,g         2
+  _U3TxBuf
+                                  00000adc       12c   data ,g         0
+  _U3RxBuf
+                                  00000c08       12c   data ,g         1
+FILE=xfiles
+                                  00000d34  00000d83        50
+  _ebuf
+                                  00000d34        50   data ,l         5
+
+SECTION=B_2
+FILE=.\r_bsp\mcu\rx23t\cpu.obj
+                                  00000d84  00000d8d         a
+  _g_protect_counters
+                                  00000d84         a   data ,l         3
+FILE=.\src\SrcUser\ctrl_flash.obj
+                                  00000d8e  00000d95         8
+  _RC_Offset_Cache$1
+                                  00000d8e         8   data ,l         1
+FILE=.\src\cg_src\r_cg_sci.obj
+                                  00000d96  00000da1         c
+  _g_sci1_tx_count
+                                  00000d96         2   data ,g         2
+  _g_sci1_rx_count
+                                  00000d98         2   data ,g         3
+  _g_sci1_rx_length
+                                  00000d9a         2   data ,g         2
+  _g_sci5_tx_count
+                                  00000d9c         2   data ,g         2
+  _g_sci5_rx_count
+                                  00000d9e         2   data ,g         3
+  _g_sci5_rx_length
+                                  00000da0         2   data ,g         2
+
+SECTION=R_2
+FILE=.\src\SrcUser\ctrl_control.obj
+                                  00000da2  00000dcb        2a
+  _RC_Offset_Rol
+                                  00000da2         2   data ,g         2
+  _RC_Offset_Pit
+                                  00000da4         2   data ,g         2
+  _HomeHeight_cm
+                                  00000da6         2   data ,g         4
+  _Demo_Act_Num
+                                  00000da8         2   data ,g         1
+  _Demo_Act_Cnt
+                                  00000daa         2   data ,g         3
+  _NodeShapeProb
+                                  00000dac        12   data ,g         2
+  _RC_Offset
+                                  00000dbe         8   data ,l         1
+  _SpPoint_Cnt$3
+                                  00000dc6         2   data ,l         1
+  _SpPoint_Cnt$6
+                                  00000dc8         2   data ,l         1
+  _Lu_Cnt$7
+                                  00000dca         2   data ,l         1
+FILE=.\src\SrcUser\ctrl_encoder.obj
+                                  00000dcc  00000dcf         4
+  _Encoder
+                                  00000dcc         4   data ,l         4
+FILE=.\src\SrcUser\ctrl_fmu.obj
+                                  00000dd0  00000dd3         4
+  _New_Pkg_Offset$1
+                                  00000dd0         2   data ,l         1
+  _New_Pkg_Length$2
+                                  00000dd2         2   data ,l         1
+FILE=.\src\SrcUser\ctrl_smp.obj
+                                  00000dd4  00000dd7         4
+  _New_Pkg_Offset$1
+                                  00000dd4         2   data ,l         1
+  _New_Pkg_Length$2
+                                  00000dd6         2   data ,l         1
+
+SECTION=B
+FILE=.\r_bsp\board\rskrx23t\lowsrc.obj
+                                  00000dd8  00000e27        50
+  __Files
+                                  00000dd8        50   data ,g         4
+FILE=.\r_bsp\board\rskrx23t\sbrk.obj
+                                  00000e28  00001227       400
+  _heap_area
+                                  00000e28       400   data ,l         2
+FILE=.\r_bsp\mcu\rx23t\mcu_interrupts.obj
+                                  00001228  00001253        2c
+  _g_bsp_vectors
+                                  00001228        2c   data ,l         4
+FILE=.\r_bsp\mcu\rx23t\mcu_locks.obj
+                                  00001254  0000130f        bc
+  _g_bsp_Locks
+                                  00001254        bc   data ,g         2
+FILE=.\r_flash_rx\src\flash_type_1\r_codeflash.obj
+                                  00001310  0000131b         c
+  _code_flash_info
+                                  00001310         c   data ,l         2
+FILE=.\r_flash_rx\src\flash_type_1\r_flash_type1.obj
+                                  0000131c  0000131f         4
+  _g_flash_lock
+                                  0000131c         4   data ,g         0
+FILE=.\r_flash_rx\src\r_flash_rx.obj
+                                  00001320  0000132b         c
+  _g_flash_lock
+                                  00001320         4   data ,l         2
+  _flash_ready_isr_handler
+                                  00001324         4   data ,g         0
+  _flash_error_isr_handler
+                                  00001328         4   data ,g         0
+FILE=.\src\SrcUser\ctrl_basic.obj
+                                  0000132c  0000137f        54
+  _DataCache$1
+                                  0000132c        50   data ,l         1
+  _Sum$2
+                                  0000137c         4   data ,l         1
+FILE=.\src\SrcUser\ctrl_control.obj
+                                  00001380  0000138f        10
+  _Hover_Start_Stamp$1
+                                  00001380         4   data ,l         1
+  _Hover_Start_Stamp$2
+                                  00001384         4   data ,l         1
+  _Hover_Start_Stamp$4
+                                  00001388         4   data ,l         1
+  _Hover_Ld_Stamp$5
+                                  0000138c         4   data ,l         1
+FILE=.\src\cg_src\r_cg_sci.obj
+                                  00001390  0000139f        10
+  _gp_sci1_tx_address
+                                  00001390         4   data ,g         2
+  _gp_sci1_rx_address
+                                  00001394         4   data ,g         2
+  _gp_sci5_tx_address
+                                  00001398         4   data ,g         2
+  _gp_sci5_rx_address
+                                  0000139c         4   data ,g         2
+FILE=_errno
+                                  000013a0  000013a3         4
+  __errno
+                                  000013a0         4   data ,g         2
+
+SECTION=R
+FILE=.\r_bsp\board\rskrx23t\lowsrc.obj
+                                  000013a4  000013b7        14
+  _env_list
+                                  000013a4        10   data ,g         1
+  _environ
+                                  000013b4         4   data ,g         0
+FILE=.\r_bsp\board\rskrx23t\sbrk.obj
+                                  000013b8  000013bb         4
+  _brk
+                                  000013b8         4   data ,l         1
+FILE=.\r_flash_rx\src\r_flash_rx.obj
+                                  000013bc  000013db        20
+  _g_flash_state
+                                  000013bc         4   data ,g         8
+  _g_current_parameters
+                                  000013c0        1c   data ,g         8
+FILE=.\src\SrcUser\ctrl_basic.obj
+                                  000013dc  000013e3         8
+  _SysDelay_ms_Cnt
+                                  000013dc         4   data ,g         1
+  _Sys_ms
+                                  000013e0         4   data ,g         4
+FILE=.\src\SrcUser\ctrl_control.obj
+                                  000013e4  00001437        54
+  _Demo_St_Act
+                                  000013e4         4   data ,g         2
+  _Demo_StToSp_Act
+                                  000013e8         4   data ,g         4
+  _Demo_StLdLu_Act
+                                  000013ec         4   data ,g         4
+  _DroneLanding
+                                  000013f0         4   data ,g         3
+  _MsgToFMU_Lock
+                                  000013f4         4   data ,g         4
+  _SysDemo
+                                  000013f8         4   data ,g         5
+  _DemoCtrlType
+                                  000013fc         4   data ,g         3
+  _Demo_LostInfo
+                                  00001400        2c   data ,g         9
+  _NodeShape_Curt
+                                  0000142c         4   data ,g         6
+  _NodeShape_Last
+                                  00001430         4   data ,g         2
+  _FindStartPoint_ms_Left
+                                  00001434         4   data ,g         2
+FILE=.\src\SrcUser\ctrl_drone_status.obj
+                                  00001438  0000143f         8
+  _Drone_Unlock_ms
+                                  00001438         4   data ,g         1
+  _DroneUnlocking
+                                  0000143c         4   data ,g         2
+FILE=.\src\SrcUser\ctrl_flash.obj
+                                  00001440  00001447         8
+  _En_RC_Offset_Update
+                                  00001440         4   data ,g         1
+  _Saving_RC_Offset
+                                  00001444         4   data ,g         0
+FILE=.\src\SrcUser\ctrl_fmu.obj
+                                  00001448  00001493        4c
+  _Msg_FMUToCtrl
+                                  00001448        24   data ,g         6
+  _Msg_CtrlToFMU
+                                  0000146c        1c   data ,g         3
+  _En_Update_Alt_Sample
+                                  00001488         4   data ,g         2
+  _AutoCtrl_RC_Ch6
+                                  0000148c         4   data ,g         3
+  _AutoCtrl_HeightAbove_35cm
+                                  00001490         4   data ,g         2
+FILE=.\src\SrcUser\ctrl_key.obj
+                                  00001494  000014a7        14
+  _Key
+                                  00001494        10   data ,g         4
+  _StartUnlock_By_Key
+                                  000014a4         4   data ,g         2
+FILE=.\src\SrcUser\ctrl_pid.obj
+                                  000014a8  00001977       4d0
+  _Dof_Alt_Smp
+                                  000014a8        20   data ,g         2
+  _SysPID
+                                  000014c8       4b0   data ,g        13
+FILE=.\src\SrcUser\ctrl_smp.obj
+                                  00001978  000019bb        44
+  _Msg_SmpToCtrl
+                                  00001978        1c   data ,g         6
+  _En_Update_PID
+                                  00001994         4   data ,g         2
+  _En_SendMsgToFMU_WhenSmpUpdate
+                                  00001998         4   data ,g         2
+  _En_SendDbgMsg
+                                  0000199c         4   data ,g         1
+  _En_Update_Act
+                                  000019a0         4   data ,g         2
+  _Msg_CtrlToSmp
+                                  000019a4        18   data ,g         2
+FILE=.\src\SrcUser\ctrl_usart.obj
+                                  000019bc  000019d3        18
+  _U1_Rx_End
+                                  000019bc         4   data ,g         1
+  _U1_Tx_End
+                                  000019c0         4   data ,g         0
+  _U2_Rx_End
+                                  000019c4         4   data ,g         1
+  _U2_Tx_End
+                                  000019c8         4   data ,g         0
+  _U3_Rx_End
+                                  000019cc         4   data ,g         0
+  _U3_Tx_End
+                                  000019d0         4   data ,g         0
+FILE=xfiles
+                                  000019d4  00001aab        d8
+  __Stdin
+                                  000019d4        48   data ,g         8
+  __Stdout
+                                  00001a1c        48   data ,g         8
+  __Stderr
+                                  00001a64        48   data ,g         3
+FILE=malloc
+                                  00001aac  00001ab3         8
+  __Aldata
+                                  00001aac         8   data ,g         3
+
+SECTION=RPFRAM
+FILE=.\r_flash_rx\src\flash_type_1\r_codeflash.obj
+                                  00001ab4  00001ccf       21c
+  _R_CF_Enter_PE_Mode
+                                  00001ab4        5e   func ,g         1
+  _R_CF_Enter_Read_Mode
+                                  00001b12        3a   func ,g         1
+  _R_CF_Write
+                                  00001b4c        17   func ,g         1
+  _R_CF_Write_Operation
+                                  00001b63        2a   func ,g         2
+  _R_CF_Write_Check
+                                  00001b8d        63   func ,g         1
+  _R_CF_Erase
+                                  00001bf0        29   func ,g         1
+  _R_CF_Erase_Check
+                                  00001c19        3d   func ,g         1
+  _R_CF_BlankCheck
+                                  00001c56        25   func ,g         1
+  _R_CF_BlankCheck_Check
+                                  00001c7b        3d   func ,g         1
+  _r_cf_write_fpmcr
+                                  00001cb8        18   func ,l         8
+FILE=.\r_flash_rx\src\flash_type_1\r_codeflash_extra.obj
+                                  00001cd0  00001e53       184
+  _R_CF_SetAccessWindow
+                                  00001cd0        45   func ,g         1
+  _R_CF_GetAccessWindow
+                                  00001d15        2e   func ,g         1
+  _R_CF_ToggleStartupArea
+                                  00001d43        38   func ,g         1
+  _r_cf_set_startup_area
+                                  00001d7b        17   func ,l         1
+  _R_CF_GetCurrentStartupArea
+                                  00001d92         c   func ,g         1
+  _R_CF_GetCurrentSwapState
+                                  00001d9e         d   func ,g         1
+  _R_CF_SetCurrentSwapState
+                                  00001dab        51   func ,g         1
+  _r_cf_extra_operation
+                                  00001dfc        34   func ,l         2
+  _r_cf_extra_check
+                                  00001e30        24   func ,g         2
+FILE=.\r_flash_rx\src\flash_type_1\r_flash_type1.obj
+                                  00001e54  000021c9       376
+  _flash_api_control
+                                  00001e54       10d   func ,g         1
+  _flash_api_write
+                                  00001f61        c2   func ,g         1
+  _flash_api_erase
+                                  00002023        be   func ,g         1
+  _flash_api_blankcheck
+                                  000020e1        c3   func ,g         1
+  _flash_get_status
+                                  000021a4         e   func ,g         1
+  _r_flash_delay_us
+                                  000021b2        18   func ,g         4
+FILE=.\r_flash_rx\src\flash_type_1\r_flash_utils.obj
+                                  000021ca  00002297        ce
+  _flash_pe_mode_enter
+                                  000021ca        12   func ,g         6
+  _flash_erase
+                                  000021dc        27   func ,g         1
+  _flash_write
+                                  00002203        27   func ,g         1
+  _flash_blankcheck
+                                  0000222a        3b   func ,g         1
+  _flash_pe_mode_exit
+                                  00002265        17   func ,g         c
+  _flash_stop
+                                  0000227c        10   func ,g         0
+  _flash_reset
+                                  0000228c         c   func ,g         e
+FILE=.\r_flash_rx\src\r_flash_rx.obj
+                                  00002298  000022f9        62
+  _flash_softwareLock
+                                  00002298        14   func ,g         1
+  _flash_softwareUnlock
+                                  000022ac         6   func ,g         1
+  _R_FLASH_Write
+                                  000022b2         4   func ,g         1
+  _R_FLASH_Erase
+                                  000022b6         4   func ,g         1
+  _R_FLASH_BlankCheck
+                                  000022ba         4   func ,g         1
+  _R_FLASH_Control
+                                  000022be         4   func ,g         0
+  _R_FLASH_GetVersion
+                                  000022c2         6   func ,g         0
+  _flash_lock_state
+                                  000022c8        21   func ,g         6
+  _flash_release_state
+                                  000022e9        11   func ,g         d
+
+SECTION=C_2
+FILE=.\r_bsp\mcu\rx23t\cpu.obj
+                                  fffe0000  fffe0007         8
+  _g_prcr_masks
+                                  fffe0000         8   data ,l         2
+
+SECTION=C
+FILE=.\r_bsp\board\rskrx23t\dbsct.obj
+                                  fffe0008  fffe001f        18
+  __CTBL
+                                  fffe0008        18   data ,g         0
+FILE=.\r_bsp\board\rskrx23t\lowsrc.obj
+                                  fffe0020  fffe0023         4
+  __nfiles
+                                  fffe0020         4   data ,g         3
+FILE=xfoprep
+                                  fffe0024  fffe006b        48
+  _init$1
+                                  fffe0024        48   data ,l         1
+FILE=xfopen
+                                  fffe006c  fffe007b        10
+  _rwacc$1
+                                  fffe006c        10   data ,l         1
+FILE=_sbrk_si
+                                  fffe007c  fffe007f         4
+  __sbrk_size
+                                  fffe007c         4   data ,g         1
+
+SECTION=C$DSEC
+FILE=.\r_bsp\board\rskrx23t\dbsct.obj
+                                  fffe0080  fffe00a3        24
+  __DTBL
+                                  fffe0080        24   data ,g         0
+
+SECTION=C$BSEC
+FILE=.\r_bsp\board\rskrx23t\dbsct.obj
+                                  fffe00a4  fffe00bb        18
+  __BTBL
+                                  fffe00a4        18   data ,g         0
+
+SECTION=C$VECT
+FILE=.\r_bsp\board\rskrx23t\resetprg.obj
+                                  fffe00bc  fffe04bb       400
+
+SECTION=D
+FILE=.\r_bsp\board\rskrx23t\lowsrc.obj
+                                  fffe04bc  fffe04cf        14
+FILE=.\r_bsp\board\rskrx23t\sbrk.obj
+                                  fffe04d0  fffe04d3         4
+FILE=.\r_flash_rx\src\r_flash_rx.obj
+                                  fffe04d4  fffe04f3        20
+FILE=.\src\SrcUser\ctrl_basic.obj
+                                  fffe04f4  fffe04fb         8
+FILE=.\src\SrcUser\ctrl_control.obj
+                                  fffe04fc  fffe054f        54
+FILE=.\src\SrcUser\ctrl_drone_status.obj
+                                  fffe0550  fffe0557         8
+FILE=.\src\SrcUser\ctrl_flash.obj
+                                  fffe0558  fffe055f         8
+FILE=.\src\SrcUser\ctrl_fmu.obj
+                                  fffe0560  fffe05ab        4c
+FILE=.\src\SrcUser\ctrl_key.obj
+                                  fffe05ac  fffe05bf        14
+FILE=.\src\SrcUser\ctrl_pid.obj
+                                  fffe05c0  fffe0a8f       4d0
+FILE=.\src\SrcUser\ctrl_smp.obj
+                                  fffe0a90  fffe0ad3        44
+FILE=.\src\SrcUser\ctrl_usart.obj
+                                  fffe0ad4  fffe0aeb        18
+FILE=xfiles
+                                  fffe0aec  fffe0bc3        d8
+FILE=malloc
+                                  fffe0bc4  fffe0bcb         8
+
+SECTION=D_1
+FILE=.\src\SrcUser\ctrl_usart.obj
+                                  fffe0bcc  fffe12d3       708
+FILE=xfiles
+                                  fffe12d4  fffe1323        50
+
+SECTION=D_2
+FILE=.\src\SrcUser\ctrl_control.obj
+                                  fffe1324  fffe134d        2a
+FILE=.\src\SrcUser\ctrl_encoder.obj
+                                  fffe134e  fffe1351         4
+FILE=.\src\SrcUser\ctrl_fmu.obj
+                                  fffe1352  fffe1355         4
+FILE=.\src\SrcUser\ctrl_smp.obj
+                                  fffe1356  fffe1359         4
+
+SECTION=L
+FILE=.\r_bsp\board\rskrx23t\dbsct.obj
+                                  fffe135c  fffe135f         4
+  _deadSpace
+                                  fffe135c         4   data ,g         0
+FILE=.\r_bsp\board\rskrx23t\lowsrc.obj
+                                  fffe1360  fffe13a1        42
+
+SECTION=P
+FILE=.\r_bsp\board\rskrx23t\hwsetup.obj
+                                  fffe13a2  fffe1425        84
+  _hardware_setup
+                                  fffe13a2         d   func ,g         1
+  _output_ports_configure
+                                  fffe13af        75   func ,l         1
+  _interrupts_configure
+                                  fffe1424         1   func ,l         1
+  _peripheral_modules_enable
+                                  fffe1425         1   func ,l         1
+FILE=.\r_bsp\board\rskrx23t\lowlvl.obj
+                                  fffe1426  fffe1441        1c
+  _charput
+                                  fffe1426         e   func ,g         1
+  _charget
+                                  fffe1434         e   func ,g         1
+FILE=.\r_bsp\board\rskrx23t\lowsrc.obj
+                                  fffe1442  fffe15c7       186
+  __INIT_IOLIB
+                                  fffe1442        75   func ,g         1
+  __CLOSEALL
+                                  fffe14b7        21   func ,g         1
+  _open
+                                  fffe14d8        67   func ,g         1
+  _close
+                                  fffe153f         3   func ,g         1
+  _write
+                                  fffe1542        42   func ,g         1
+  _read
+                                  fffe1584        40   func ,g         0
+  _lseek
+                                  fffe15c4         4   func ,g         0
+FILE=.\r_bsp\board\rskrx23t\resetprg.obj
+                                  fffe15c8  fffe16b2        eb
+  _PowerON_Reset_PC
+                                  fffe15c8        62   entry,g         1
+  _operating_frequency_set
+                                  fffe162a        31   func ,l         1
+  _clock_source_select
+                                  fffe165b        4a   func ,l         1
+  _usb_lpc_clock_source_select
+                                  fffe16a5         e   func ,l         1
+FILE=.\r_bsp\board\rskrx23t\sbrk.obj
+                                  fffe16b3  fffe16d3        21
+  _sbrk
+                                  fffe16b3        21   func ,g         1
+FILE=.\r_bsp\board\rskrx23t\vecttbl.obj
+                                  fffe16d4  fffe17df       10c
+  _excep_supervisor_inst_isr
+                                  fffe16d4        18   func ,g         1
+  _excep_access_isr
+                                  fffe16ec        18   func ,g         1
+  _excep_undefined_inst_isr
+                                  fffe1704        18   func ,g         1
+  _excep_floating_point_isr
+                                  fffe171c        22   func ,g         1
+  _non_maskable_isr
+                                  fffe173e        6b   func ,g         1
+  _undefined_interrupt_source_isr
+                                  fffe17a9        18   func ,g         6
+  _bus_error_isr
+                                  fffe17c1        1f   func ,g         0
+FILE=.\r_bsp\mcu\all\r_bsp_common.obj
+                                  fffe17e0  fffe18b0        d1
+  _R_BSP_GetVersion
+                                  fffe17e0         6   func ,g         0
+  _R_BSP_GetIClkFreqHz
+                                  fffe17e6         4   func ,g         1
+  _R_BSP_SoftwareDelay
+                                  fffe17ea        c7   func ,g         0
+FILE=.\r_bsp\mcu\rx23t\cpu.obj
+                                  fffe18b1  fffe1972        c2
+  _R_BSP_InterruptsDisable
+                                  fffe18b1         3   func ,g         0
+  _R_BSP_InterruptsEnable
+                                  fffe18b4         3   func ,g         0
+  _R_BSP_CpuInterruptLevelRead
+                                  fffe18b7         9   func ,g         0
+  _R_BSP_CpuInterruptLevelWrite
+                                  fffe18c0        1c   func ,g         0
+  _R_BSP_RegisterProtectEnable
+                                  fffe18dc        47   func ,g         1
+  _R_BSP_RegisterProtectDisable
+                                  fffe1923        3e   func ,g         1
+  _bsp_register_protect_open
+                                  fffe1961        12   func ,g         1
+FILE=.\r_bsp\mcu\rx23t\locking.obj
+                                  fffe1973  fffe19a8        36
+  _R_BSP_SoftwareLock
+                                  fffe1973        14   func ,g         1
+  _R_BSP_SoftwareUnlock
+                                  fffe1987         6   func ,g         1
+  _R_BSP_HardwareLock
+                                  fffe198d         e   func ,g         0
+  _R_BSP_HardwareUnlock
+                                  fffe199b         e   func ,g         0
+FILE=.\r_bsp\mcu\rx23t\mcu_clocks.obj
+                                  fffe19a9  fffe1a05        5d
+  _get_iclk_freq_hz
+                                  fffe19a9        5d   func ,g         1
+FILE=.\r_bsp\mcu\rx23t\mcu_init.obj
+                                  fffe1a06  fffe1a73        6e
+  _bsp_non_existent_port_init
+                                  fffe1a06        6e   func ,g         1
+FILE=.\r_bsp\mcu\rx23t\mcu_interrupts.obj
+                                  fffe1a74  fffe1b44        d1
+  _bsp_interrupt_open
+                                  fffe1a74        16   func ,g         1
+  _R_BSP_InterruptWrite
+                                  fffe1a8a        1c   func ,g         1
+  _R_BSP_InterruptRead
+                                  fffe1aa6        1b   func ,g         0
+  _R_BSP_InterruptControl
+                                  fffe1ac1        3f   func ,g         c
+  _bsp_interrupt_enable_disable
+                                  fffe1b00        45   func ,g         2
+FILE=.\r_flash_rx\src\flash_type_1\r_flash_type1.obj
+                                  fffe1b45  fffe1b57        13
+  _flash_api_open
+                                  fffe1b45        13   func ,g         1
+FILE=.\r_flash_rx\src\r_flash_rx.obj
+                                  fffe1b58  fffe1b80        29
+  _R_FLASH_Open
+                                  fffe1b58        14   func ,g         1
+  _R_FlashCodeCopy
+                                  fffe1b6c        15   func ,g         1
+FILE=.\src\Flgiht.obj
+                                  fffe1b81  fffe1b81         1
+  _main
+                                  fffe1b81         1   func ,g         1
+FILE=.\src\SrcUser\ctrl_basic.obj
+                                  fffe1b82  fffe1cc2       141
+  _Average_Float
+                                  fffe1b82        19   func ,g         0
+  _Fill_Mem
+                                  fffe1b9b         d   func ,g         2
+  _SysDelay_ms
+                                  fffe1ba8         e   func ,g         0
+  _Abs
+                                  fffe1bb6         e   func ,g         1
+  _Constraint
+                                  fffe1bc4        17   func ,g         1
+  _Constraint_By_Abs
+                                  fffe1bdb         9   func ,g         1
+  _DataFilter
+                                  fffe1be4        70   func ,g         1
+  _Data_Quick_Sort
+                                  fffe1c54        6f   func ,g         2
+FILE=.\src\SrcUser\ctrl_control.obj
+                                  fffe1cc3  fffe2a8c       dca
+  _SysCtrl_Update_PID_Set_Find_St
+                                  fffe1cc3         1   func ,l         1
+  _SysCtrl_Update_PID_Set_Demo_St
+                                  fffe1cc4        27   func ,l         1
+  _SysCtrl_Update_PID_Set_Demo_StToSp
+                                  fffe1ceb        27   func ,l         1
+  _SysCtrl_Update_PID_Set_Demo_StLdLu
+                                  fffe1d12        27   func ,l         1
+  _SysCtrl_Update_Act_Find_St
+                                  fffe1d39       134   func ,l         1
+  _SysCtrl_Update_Act_Demo_St
+                                  fffe1e6d       115   func ,l         1
+  _SysCtrl_Update_Act_Demo_StToSp
+                                  fffe1f82       1c2   func ,l         1
+  _SysCtrl_Update_Act_Demo_StLdLu
+                                  fffe2144       1c9   func ,l         1
+  _SysCtrl_Update_Lost_Info_Find_St
+                                  fffe230d         a   func ,l         1
+  _SysCtrl_Update_Lost_Info_Demo_St
+                                  fffe2317        4e   func ,l         1
+  _SysCtrl_Update_Lost_Info_Demo_StToSp
+                                  fffe2365        81   func ,l         1
+  _SysCtrl_Update_Lost_Info_Demo_StLdLU
+                                  fffe23e6        94   func ,l         1
+  _SysCtrl_Update_PID_Change_Find_St
+                                  fffe247a        6f   func ,l         1
+  _SysCtrl_Update_PID_Change_Demo_St
+                                  fffe24e9         1   func ,l         1
+  _SysCtrl_Update_PID_Change_Demo_StToSp
+                                  fffe24ea        18   func ,l         1
+  _SysCtrl_Update_PID_Change_Demo_StLdLU
+                                  fffe2502        21   func ,l         1
+  _SysCtrl_Msg_Ctrl_To_FMU_Init
+                                  fffe2523         a   func ,g         0
+  _SysCtrl_Modify_RC_Offset
+                                  fffe252d        3b   func ,g         1
+  _SysCtrl_Set_Demo_By_Encoder
+                                  fffe2568        31   func ,g         1
+  _SysCtrl_Init_Find_Start_Point
+                                  fffe2599        1a   func ,g         0
+  _SysCtrl_Update_PID
+                                  fffe25b3        1f   func ,g         0
+  _SysCtrl_Update_PID_Set
+                                  fffe25d2        71   func ,g         1
+  _SysCtrl_Update_PID_Sample
+                                  fffe2643        be   func ,g         1
+  _SysCtrl_Update_PID_Error
+                                  fffe2701        ac   func ,g         1
+  _SysCtrl_Update_PID_Calculate
+                                  fffe27ad        a5   func ,g         1
+  _SysCtrl_Update_PID_Change
+                                  fffe2852        2a   func ,g         1
+  _SysCtrl_Update_Act
+                                  fffe287c        53   func ,g         0
+  _SysCtrl_Update_Lost_Info
+                                  fffe28cf        2a   func ,g         0
+  _SysCtrl_Update_Msg_Ctrl_To_FMU_Type
+                                  fffe28f9        c9   func ,g         3
+  _SysCtrl_Update_Msg_Ctrl_To_FMU
+                                  fffe29c2        73   func ,g         0
+  _SysCtrl_Unlock_FMU
+                                  fffe2a35        27   func ,g         1
+  _Is_On_Node
+                                  fffe2a5c        31   func ,g         f
+FILE=.\src\SrcUser\ctrl_encoder.obj
+                                  fffe2a8d  fffe2adc        50
+  _Update_Encoder_Value
+                                  fffe2a8d        31   func ,g         1
+  _Update_Encoder_PowerOn_Value
+                                  fffe2abe         d   func ,g         0
+  _Get_Encoder_Value
+                                  fffe2acb         9   func ,g         1
+  _Get_Encoder_PowerOn_Value
+                                  fffe2ad4         9   func ,g         0
+FILE=.\src\SrcUser\ctrl_flash.obj
+                                  fffe2add  fffe2c01       125
+  _Flash_Erase_User_Zone
+                                  fffe2add        30   func ,l         1
+  _Key_PowerOn_Event_Handle
+                                  fffe2b0d        83   func ,g         0
+  _Save_RC_Offset_To_Flash
+                                  fffe2b90        3b   func ,g         1
+  _Read_RC_Offset_From_Flash
+                                  fffe2bcb        37   func ,g         1
+FILE=.\src\SrcUser\ctrl_fmu.obj
+                                  fffe2c02  fffe2d0e       10d
+  _Msg_FMU_To_Ctrl_Update
+                                  fffe2c02       10d   func ,g         1
+FILE=.\src\SrcUser\ctrl_key.obj
+                                  fffe2d0f  fffe2e2d       11f
+  _Update_Key_Value
+                                  fffe2d0f        57   func ,g         1
+  _Update_Key_PowerOn_Value
+                                  fffe2d66        3a   func ,g         0
+  _Unlock_FMU_By_Key_Handle
+                                  fffe2da0        8e   func ,g         0
+FILE=.\src\SrcUser\ctrl_pid.obj
+                                  fffe2e2e  fffe32c5       498
+  _Dof_PID_Init_Similar_Parameter
+                                  fffe2e2e        9a   func ,l         4
+  _PID_Parameter_Init
+                                  fffe2ec8       1e4   func ,g         0
+  _PID_Update_Alt_Sample
+                                  fffe30ac        5b   func ,g         1
+  _Get_Height
+                                  fffe3107         d   func ,g         6
+  _Dof_PID_Update_Calculate
+                                  fffe3114        3c   func ,g         4
+  _Dof_PID_Update
+                                  fffe3150        40   func ,g         0
+  _Is_Alt_Valid
+                                  fffe3190         f   func ,g         1
+  _PID_Update_Sample
+                                  fffe319f        4d   func ,g         9
+  _PID_Update_Set
+                                  fffe31ec        13   func ,g         1
+  _PID_Update_Error
+                                  fffe31ff        67   func ,g         9
+  _PID_Update_Out
+                                  fffe3266        38   func ,g         3
+  _PID_Update
+                                  fffe329e        28   func ,g         2
+FILE=.\src\SrcUser\ctrl_smp.obj
+                                  fffe32c6  fffe33ec       127
+  _Msg_Ctrl_To_Smp_Init
+                                  fffe32c6         a   func ,g         0
+  _Msg_Smp_To_Ctrl_Update
+                                  fffe32d0        f1   func ,g         0
+  _Msg_Ctrl_To_Smp_Update
+                                  fffe33c1        2c   func ,g         1
+FILE=.\src\SrcUser\ctrl_usart.obj
+                                  fffe33ed  fffe3434        48
+  _Usart_Rx_Buf_Init
+                                  fffe33ed        48   func ,g         0
+FILE=.\src\cg_src\r_cg_cgc.obj
+                                  fffe3435  fffe343c         8
+  _R_CGC_Create
+                                  fffe3435         8   func ,g         1
+FILE=.\src\cg_src\r_cg_cmt.obj
+                                  fffe343d  fffe34e2        a6
+  _R_CMT0_Create
+                                  fffe343d        2a   func ,g         1
+  _R_CMT0_Start
+                                  fffe3467        13   func ,g         1
+  _R_CMT0_Stop
+                                  fffe347a        16   func ,g         2
+  _R_CMT1_Create
+                                  fffe3490        2a   func ,g         1
+  _R_CMT1_Start
+                                  fffe34ba        13   func ,g         0
+  _R_CMT1_Stop
+                                  fffe34cd        16   func ,g         0
+FILE=.\src\cg_src\r_cg_cmt_user.obj
+                                  fffe34e3  fffe3519        37
+  _r_cmt_cmi0_interrupt
+                                  fffe34e3        1c   func ,l         0
+  _r_cmt_cmi1_interrupt
+                                  fffe34ff        1b   func ,l         0
+FILE=.\src\cg_src\r_cg_hardware_setup.obj
+                                  fffe351a  fffe355f        46
+  _r_undefined_exception
+                                  fffe351a         1   func ,g         1
+  _R_Systeminit
+                                  fffe351b        43   func ,g         1
+  _HardwareSetup
+                                  fffe355e         2   func ,g         0
+FILE=.\src\cg_src\r_cg_port.obj
+                                  fffe3560  fffe356c         d
+  _R_PORT_Create
+                                  fffe3560         d   func ,g         1
+FILE=.\src\cg_src\r_cg_sci.obj
+                                  fffe356d  fffe377e       212
+  _R_SCI1_Create
+                                  fffe356d        60   func ,g         1
+  _R_SCI1_Start
+                                  fffe35cd        1b   func ,g         0
+  _R_SCI1_Stop
+                                  fffe35e8        34   func ,g         0
+  _R_SCI1_Serial_Receive
+                                  fffe361c        2c   func ,g         1
+  _R_SCI1_Serial_Send
+                                  fffe3648        2e   func ,g         1
+  _R_SCI5_Create
+                                  fffe3676        60   func ,g         1
+  _R_SCI5_Start
+                                  fffe36d6        1b   func ,g         0
+  _R_SCI5_Stop
+                                  fffe36f1        34   func ,g         0
+  _R_SCI5_Serial_Receive
+                                  fffe3725        2c   func ,g         1
+  _R_SCI5_Serial_Send
+                                  fffe3751        2e   func ,g         1
+FILE=.\src\cg_src\r_cg_sci_user.obj
+                                  fffe377f  fffe38f4       176
+  _r_sci1_transmit_interrupt
+                                  fffe377f        35   func ,l         0
+  _r_sci1_transmitend_interrupt
+                                  fffe37b4        24   func ,l         0
+  _r_sci1_receive_interrupt
+                                  fffe37d8        42   func ,l         0
+  _r_sci1_receiveerror_interrupt
+                                  fffe381a        1d   func ,l         0
+  _r_sci1_callback_transmitend
+                                  fffe3837         1   func ,l         1
+  _r_sci1_callback_receiveend
+                                  fffe3838         1   func ,l         1
+  _r_sci1_callback_receiveerror
+                                  fffe3839         1   func ,l         1
+  _r_sci5_transmit_interrupt
+                                  fffe383a        35   func ,l         0
+  _r_sci5_transmitend_interrupt
+                                  fffe386f        24   func ,l         0
+  _r_sci5_receive_interrupt
+                                  fffe3893        42   func ,l         0
+  _r_sci5_receiveerror_interrupt
+                                  fffe38d5        1d   func ,l         0
+  _r_sci5_callback_transmitend
+                                  fffe38f2         1   func ,l         1
+  _r_sci5_callback_receiveend
+                                  fffe38f3         1   func ,l         1
+  _r_sci5_callback_receiveerror
+                                  fffe38f4         1   func ,l         1
+FILE=freopen
+                                  fffe38f5  fffe3923        2f
+  _freopen
+                                  fffe38f5        2f   func ,g         3
+FILE=fclose
+                                  fffe3924  fffe3977        54
+  _fclose
+                                  fffe3924        54   func ,g         4
+FILE=__COM_DIV64u
+                                  fffe3978  fffe3a10        99
+  __COM_DIV64u
+                                  fffe3978         0   none ,g         1
+  _Loop_Init
+                                  fffe3982         0   none ,l         2
+  _Loop
+                                  fffe398a         0   none ,l         1
+  _DivStart
+                                  fffe3996         0   none ,l         3
+  _Success
+                                  fffe39a4         0   none ,l         1
+  _DivEnd
+                                  fffe39b0         0   none ,l         0
+  IXI6DIV
+                                  fffe39b5         0   none ,l         1
+  IXI4DIV
+                                  fffe39c7         0   none ,l         1
+  IXI2DIV
+                                  fffe39d7         0   none ,l         1
+  I8I2DIV
+                                  fffe39df         0   none ,l         1
+  I4I2DIV
+                                  fffe3a0d         0   none ,l         1
+  _i8divU_End
+                                  fffe3a10         0   none ,l         0
+FILE=__initsct
+                                  fffe3a11  fffe3a5a        4a
+  __INITSCT
+                                  fffe3a11         0   none ,g         1
+  loop1
+                                  fffe3a23         0   none ,l         1
+  next_loop1
+                                  fffe3a31         0   none ,l         2
+  loop3
+                                  fffe3a43         0   none ,l         1
+  next_loop3
+                                  fffe3a54         0   none ,l         2
+FILE=fflush
+                                  fffe3a5b  fffe3add        83
+  _fflush
+                                  fffe3a5b        83   func ,g         2
+FILE=xfoprep
+                                  fffe3ade  fffe3bb3        d6
+  __Foprep
+                                  fffe3ade        d6   func ,g         1
+FILE=xfofind
+                                  fffe3bb4  fffe3c41        8e
+  __Fofind
+                                  fffe3bb4        45   func ,g         0
+  __Fofree
+                                  fffe3bf9        49   func ,g         2
+FILE=free
+                                  fffe3c42  fffe3cc4        83
+  _free
+                                  fffe3c42        83   func ,g         3
+FILE=xfopen
+                                  fffe3cc5  fffe3cf4        30
+  __Fopen
+                                  fffe3cc5        30   func ,g         1
+FILE=malloc
+                                  fffe3cf5  fffe3dd2        de
+  _findmem
+                                  fffe3cf5        7b   func ,l         1
+  _malloc
+                                  fffe3d70        63   func ,g         1
+FILE=xgetmem
+                                  fffe3dd3  fffe3ded        1b
+  __Getmem
+                                  fffe3dd3        1b   func ,g         1
+
+SECTION=PFRAM
+FILE=.\r_flash_rx\src\flash_type_1\r_codeflash.obj
+                                  fffe3dee  fffe4009       21c
+FILE=.\r_flash_rx\src\flash_type_1\r_codeflash_extra.obj
+                                  fffe400a  fffe418d       184
+FILE=.\r_flash_rx\src\flash_type_1\r_flash_type1.obj
+                                  fffe418e  fffe4503       376
+FILE=.\r_flash_rx\src\flash_type_1\r_flash_utils.obj
+                                  fffe4504  fffe45d1        ce
+FILE=.\r_flash_rx\src\r_flash_rx.obj
+                                  fffe45d2  fffe4633        62
+
+SECTION=EXCEPTVECT
+FILE=.\r_bsp\board\rskrx23t\vecttbl.obj
+                                  ffffff80  fffffffb        7c
+  _Except_Vectors
+                                  ffffff80        7c   data ,g         0
+
+SECTION=RESETVECT
+FILE=.\r_bsp\board\rskrx23t\vecttbl.obj
+                                  fffffffc  ffffffff         4
+  _Reset_Vector
+                                  fffffffc         4   data ,g         0
+
+*** Unfilled Areas ***
+
+AREA                                START    END
+
+*** Delete Symbols ***
+
+SYMBOL                                SIZE    INFO
