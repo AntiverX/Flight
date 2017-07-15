@@ -36,9 +36,9 @@ typedef enum
 // 比例、积分、微分
 typedef enum
 {
-    P = 0,
-	I,
-	D,
+    PID_P = 0,
+	PID_I,
+	PID_D,
     Para_Num,
 }DofPIDPara_t;
 
