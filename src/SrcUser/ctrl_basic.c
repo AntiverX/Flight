@@ -42,9 +42,10 @@ extern void Fill_Mem(uint8* pAdd, uint16 Len, uint8 FillWith)
 extern void SysDelay_ms(uint32 ms)
 {
     SysDelay_ms_Cnt = 0;
-    
     while(SysDelay_ms_Cnt < ms)
+    {
         ;
+    }
 }
 
 // 绝对值

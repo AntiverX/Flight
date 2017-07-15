@@ -38,6 +38,9 @@ Includes
 #include "r_cg_macrodriver.h"
 #include "r_cg_sci.h"
 /* Start user code for include. Do not edit comment generated here */
+#include "ctrl_usart.h"
+#include "ctrl_fmu.h"
+#include "ctrl_smp.h"
 /* End user code. Do not edit comment generated here */
 #include "r_cg_userdefine.h"
 
@@ -161,6 +164,7 @@ static void r_sci1_receiveerror_interrupt(void)
 static void r_sci1_callback_transmitend(void)
 {
     /* Start user code. Do not edit comment generated here */
+	U1_Tx_End = Yes;
     /* End user code. Do not edit comment generated here */
 }
 /***********************************************************************************************************************
@@ -172,6 +176,7 @@ static void r_sci1_callback_transmitend(void)
 static void r_sci1_callback_receiveend(void)
 {
     /* Start user code. Do not edit comment generated here */
+	U1_Rx_End = Yes;
     /* End user code. Do not edit comment generated here */
 }
 /***********************************************************************************************************************
@@ -183,6 +188,7 @@ static void r_sci1_callback_receiveend(void)
 static void r_sci1_callback_receiveerror(void)
 {
     /* Start user code. Do not edit comment generated here */
+	R_SCI1_Serial_Receive(U1RxBuf,sizeof(Msg_FMUToCtrl_t));
     /* End user code. Do not edit comment generated here */
 }
 /***********************************************************************************************************************
@@ -289,6 +295,7 @@ static void r_sci5_receiveerror_interrupt(void)
 static void r_sci5_callback_transmitend(void)
 {
     /* Start user code. Do not edit comment generated here */
+	U2_Tx_End = Yes;
     /* End user code. Do not edit comment generated here */
 }
 /***********************************************************************************************************************
@@ -300,6 +307,7 @@ static void r_sci5_callback_transmitend(void)
 static void r_sci5_callback_receiveend(void)
 {
     /* Start user code. Do not edit comment generated here */
+	U2_Rx_End = Yes;
     /* End user code. Do not edit comment generated here */
 }
 /***********************************************************************************************************************
@@ -311,6 +319,7 @@ static void r_sci5_callback_receiveend(void)
 static void r_sci5_callback_receiveerror(void)
 {
     /* Start user code. Do not edit comment generated here */
+	R_SCI5_Serial_Receive(U2RxBuf, sizeof(Msg_SmpToCtrl_t));
     /* End user code. Do not edit comment generated here */
 }
 
