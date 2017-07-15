@@ -37,8 +37,8 @@ typedef enum
 typedef enum
 {
     P = 0,
-	i,
-	d,
+	I,
+	D,
     Para_Num,
 }DofPIDPara_t;
 

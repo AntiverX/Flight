@@ -21,7 +21,7 @@
 -input="./r_flash_rx/src/flash_type_3/r_flash_type3.obj"
 -input="./r_flash_rx/src/flash_type_4/r_flash_type4.obj"
 -input="./r_flash_rx/src/r_flash_rx.obj"
--input="./src/Flgiht.obj"
+-input="./src/Flight.obj"
 -input="./src/SrcUser/ctrl_basic.obj"
 -input="./src/SrcUser/ctrl_beep.obj"
 -input="./src/SrcUser/ctrl_control.obj"

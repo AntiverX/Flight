@@ -1,4 +1,4 @@
-Renesas Optimizing Linker (W2.06.00 )             15-Jul-2017 00:45:02
+Renesas Optimizing Linker (W2.06.00 )             15-Jul-2017 12:53:49
 
 *** Options ***
 
@@ -26,7 +26,7 @@ Renesas Optimizing Linker (W2.06.00 )             15-Jul-2017 00:45:02
 -input="./r_flash_rx/src/flash_type_3/r_flash_type3.obj"
 -input="./r_flash_rx/src/flash_type_4/r_flash_type4.obj"
 -input="./r_flash_rx/src/r_flash_rx.obj"
--input="./src/Flgiht.obj"
+-input="./src/Flight.obj"
 -input="./src/SrcUser/ctrl_basic.obj"
 -input="./src/SrcUser/ctrl_beep.obj"
 -input="./src/SrcUser/ctrl_control.obj"
@@ -53,13 +53,13 @@ Renesas Optimizing Linker (W2.06.00 )             15-Jul-2017 00:45:02
 -input="./src/cg_src/r_cg_sci.obj"
 -input="./src/cg_src/r_cg_sci_user.obj"
 -start=SU,SI,B_1,R_1,B_2,R_2,B,R,RPFRAM/04,C_1,C_2,C,C$*,D*,W*,L,P*/0FFFE0000,EXCEPTVECT/0FFFFFF80,RESETVECT/0FFFFFFFC
--library=G:\UAV\myproject\Flight\HardwareDebug\Flgiht.lib
+-library=C:\Users\Antiver\DOCUME~1\WORKSP~1\Flight\HARDWA~2\Flgiht.lib
 -noprelink
 -list=Flgiht.map
 -show
 -nooptimize
 -debug
--output=G:\UAV\myproject\Flight\HardwareDebug\Flgiht.abs
+-output=C:\Users\Antiver\Documents\Workspace\Flight\HardwareDebug\Flgiht.abs
 -rom=D=R,PFRAM=RPFRAM,D_1=R_1,D_2=R_2
 -nocompress
 -vect=_undefined_interrupt_source_isr
@@ -67,6 +67,8 @@ Renesas Optimizing Linker (W2.06.00 )             15-Jul-2017 00:45:02
 -nologo
 
 *** Error information ***
+
+W0561014:License manager is not installed
 
 *** Mapping List ***
 
@@ -738,7 +740,7 @@ FILE=.\r_flash_rx\src\r_flash_rx.obj
                                   fffe1ff5        1f   func ,g         1
   _R_FlashCodeCopy
                                   fffe2014        36   func ,g         1
-FILE=.\src\Flgiht.obj
+FILE=.\src\Flight.obj
                                   fffe204a  fffe20c9        80
   _R_MAIN_UserInit
                                   fffe204a        5b   func ,g         1
