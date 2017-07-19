@@ -20,6 +20,7 @@
 #include "ctrl_usart.h"
 #include "r_cg_macrodriver.h"
 #include "r_cg_port.h"
+#include "r_cg_sci.h"
 
 // 定义、初始化 Demo 状态
 extern Demo_St_Act_t Demo_St_Act = Demo_St_Act_Climb;

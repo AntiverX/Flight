@@ -37,8 +37,8 @@
 // 控制板按键识别
 typedef enum
 {
-    SW1,         // 0
-    SW2,         // 1
+    SW1_,         // 0
+    SW2_,         // 1
     
     Key_Num,    // 2
 }KeyID_t;

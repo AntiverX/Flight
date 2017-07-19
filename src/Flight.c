@@ -42,11 +42,22 @@ void abort(void);
 #include "r_cg_cmt.h"
 #include "r_cg_sci.h"
 /* Start user code for include. Do not edit comment generated here */
-#include "ctrl_usart.h"
-#include "ctrl_fmu.h"
 #include "ctrl_smp.h"
+#include "ctrl_fmu.h"
+#include "ctrl_led.h"
+#include "ctrl_beep.h"
+#include "ctrl_key.h"
+#include "ctrl_pid.h"
+#include "ctrl_serial_graph.h"
+#include "ctrl_debug.h"
+#include "ctrl_control.h"
+#include "ctrl_flash.h"
+#include "ctrl_encoder.h"
+#include "ctrl_usart.h"
+//#include "ctrl_key.h"
 /* End user code. Do not edit comment generated here */
 #include "r_cg_userdefine.h"
+
 
 void R_MAIN_UserInit(void)
 {

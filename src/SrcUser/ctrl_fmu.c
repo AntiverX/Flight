@@ -17,6 +17,7 @@
 #include "r_cg_macrodriver.h"
 #include "r_cg_cmt.h"
 #include "r_cg_port.h"
+#include "r_cg_sci.h"
 
 extern Msg_FMUToCtrl_t Msg_FMUToCtrl = {0};     // 飞控给控制板发送的数据包
 extern Msg_CtrlToFMU_t Msg_CtrlToFMU = {0};     // 控制板给飞控发送的数据包
