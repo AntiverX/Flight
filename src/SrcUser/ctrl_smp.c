@@ -10,6 +10,7 @@
 #include "ctrl_fmu.h"
 #include "ctrl_led.h"
 #include "ctrl_usart.h"
+#include "r_cg_macrodriver.h"
 #include "r_cg_sci.h"
 
 extern Msg_SmpToCtrl_t Msg_SmpToCtrl = {0};
