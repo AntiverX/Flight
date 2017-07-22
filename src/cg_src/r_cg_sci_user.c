@@ -179,7 +179,6 @@ static void r_sci1_callback_receiveend(void)
     /* Start user code. Do not edit comment generated here */
 	BEEP_IO_TOOGLE;
 	LED_SIGNAL_IO_TOOGLE;
-	R_SCI1_Serial_Send(&sec,1);
     /* End user code. Do not edit comment generated here */
 }
 /***********************************************************************************************************************
@@ -311,7 +310,6 @@ static void r_sci5_callback_receiveend(void)
     /* Start user code. Do not edit comment generated here */
 	BEEP_IO_TOOGLE;
 	LED_SIGNAL_IO_TOOGLE;
-	R_SCI5_Serial_Send(&sec5,1);
     /* End user code. Do not edit comment generated here */
 }
 /***********************************************************************************************************************
