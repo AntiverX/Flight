@@ -57,8 +57,6 @@ extern uint8_t * gp_sci5_rx_address;                /* SCI5 receive buffer addre
 extern uint16_t  g_sci5_rx_count;                   /* SCI5 receive data number */
 extern uint16_t  g_sci5_rx_length;                  /* SCI5 receive data length */
 /* Start user code for global. Do not edit comment generated here */
-extern uint8_t sec;
-extern uint8_t sec5;
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************

@@ -23,7 +23,7 @@
 * Device(s)    : R5F523T5AxFM
 * Tool-Chain   : CCRX
 * Description  : This file implements device driver for CMT module.
-* Creation Date: 2017/7/14
+* Creation Date: 2017/7/22
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -38,9 +38,6 @@ Includes
 #include "r_cg_macrodriver.h"
 #include "r_cg_cmt.h"
 /* Start user code for include. Do not edit comment generated here */
-#include "ctrl_basic.h"
-#include "ctrl_control.h"
-#include "ctrl_drone_status.h"
 /* End user code. Do not edit comment generated here */
 #include "r_cg_userdefine.h"
 
@@ -64,13 +61,6 @@ Global variables and functions
 static void r_cmt_cmi2_interrupt(void)
 {
     /* Start user code. Do not edit comment generated here */
-	Sys_ms++;
-	SysDelay_ms_Cnt++;
-	Drone_Unlock_ms++;
-	if(Demo_LostInfo.Lost_ms < LOST_CNT_MAX+1)
-		Demo_LostInfo.Lost_ms++;
-	if(FindStartPoint_ms_Left > 0)
-		 FindStartPoint_ms_Left--;
     /* End user code. Do not edit comment generated here */
 }
 
