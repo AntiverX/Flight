@@ -23,7 +23,7 @@
 * Device(s)    : R5F523T5AxFM
 * Tool-Chain   : CCRX
 * Description  : This file implements device driver for SCI module.
-* Creation Date: 2017/7/14
+* Creation Date: 2017/7/22
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -38,9 +38,8 @@ Includes
 #include "r_cg_macrodriver.h"
 #include "r_cg_sci.h"
 /* Start user code for include. Do not edit comment generated here */
-#include "ctrl_usart.h"
-#include "ctrl_fmu.h"
-#include "ctrl_smp.h"
+#include "ctrl_led.h"
+#include "ctrl_beep.h"
 /* End user code. Do not edit comment generated here */
 #include "r_cg_userdefine.h"
 
@@ -58,6 +57,8 @@ extern uint8_t * gp_sci5_rx_address;                /* SCI5 receive buffer addre
 extern uint16_t  g_sci5_rx_count;                   /* SCI5 receive data number */
 extern uint16_t  g_sci5_rx_length;                  /* SCI5 receive data length */
 /* Start user code for global. Do not edit comment generated here */
+extern uint8_t sec;
+extern uint8_t sec5;
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
@@ -164,7 +165,7 @@ static void r_sci1_receiveerror_interrupt(void)
 static void r_sci1_callback_transmitend(void)
 {
     /* Start user code. Do not edit comment generated here */
-	U1_Tx_End = Yes;
+
     /* End user code. Do not edit comment generated here */
 }
 /***********************************************************************************************************************
@@ -176,7 +177,9 @@ static void r_sci1_callback_transmitend(void)
 static void r_sci1_callback_receiveend(void)
 {
     /* Start user code. Do not edit comment generated here */
-	U1_Rx_End = Yes;
+	BEEP_IO_TOOGLE;
+	LED_SIGNAL_IO_TOOGLE;
+	R_SCI1_Serial_Send(&sec,1);
     /* End user code. Do not edit comment generated here */
 }
 /***********************************************************************************************************************
@@ -188,7 +191,7 @@ static void r_sci1_callback_receiveend(void)
 static void r_sci1_callback_receiveerror(void)
 {
     /* Start user code. Do not edit comment generated here */
-	R_SCI1_Serial_Receive(U1RxBuf,sizeof(Msg_FMUToCtrl_t));
+
     /* End user code. Do not edit comment generated here */
 }
 /***********************************************************************************************************************
@@ -295,7 +298,6 @@ static void r_sci5_receiveerror_interrupt(void)
 static void r_sci5_callback_transmitend(void)
 {
     /* Start user code. Do not edit comment generated here */
-	U2_Tx_End = Yes;
     /* End user code. Do not edit comment generated here */
 }
 /***********************************************************************************************************************
@@ -307,7 +309,9 @@ static void r_sci5_callback_transmitend(void)
 static void r_sci5_callback_receiveend(void)
 {
     /* Start user code. Do not edit comment generated here */
-	U2_Rx_End = Yes;
+	BEEP_IO_TOOGLE;
+	LED_SIGNAL_IO_TOOGLE;
+	R_SCI5_Serial_Send(&sec5,1);
     /* End user code. Do not edit comment generated here */
 }
 /***********************************************************************************************************************
@@ -319,7 +323,6 @@ static void r_sci5_callback_receiveend(void)
 static void r_sci5_callback_receiveerror(void)
 {
     /* Start user code. Do not edit comment generated here */
-	R_SCI5_Serial_Receive(U2RxBuf, sizeof(Msg_SmpToCtrl_t));
     /* End user code. Do not edit comment generated here */
 }
 

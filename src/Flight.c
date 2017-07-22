@@ -1,7 +1,7 @@
 /***************************************************************/
 /*                                                             */
-/*      PROJECT NAME :  Flgiht                                 */
-/*      FILE         :  Flgiht.c                               */
+/*      PROJECT NAME :  3                                      */
+/*      FILE         :  3.c                                    */
 /*      DESCRIPTION  :  Main Program                           */
 /*      CPU SERIES   :  RX200                                  */
 /*      CPU TYPE     :  RX23T                                  */
@@ -29,19 +29,21 @@
 //_SINT ios_base::Init::init_cnt;       // Remove the comment when you use ios
 #endif
 
-void main(void);
-#ifdef __cplusplus
-extern "C" {
-void abort(void);
-}
-#endif
 
+
+
+/* Start user code for include. Do not edit comment generated here */
+/* End user code. Do not edit comment generated here */
+
+
+
+/* Start user code for include. Do not edit comment generated here */
 #include "r_cg_macrodriver.h"
 #include "r_cg_cgc.h"
 #include "r_cg_port.h"
 #include "r_cg_cmt.h"
 #include "r_cg_sci.h"
-/* Start user code for include. Do not edit comment generated here */
+#include "platform.h"
 #include "ctrl_smp.h"
 #include "ctrl_fmu.h"
 #include "ctrl_led.h"
@@ -62,7 +64,6 @@ void abort(void);
 void R_MAIN_UserInit(void)
 {
     /* Start user code. Do not edit comment generated here */
-	HardwareSetup();
 	R_SCI1_Create();
 	R_SCI5_Create();
 	R_CMT2_Start();						// 启动毫秒定时器
@@ -100,21 +101,21 @@ void main(void)
 	R_MAIN_UserInit();
 	while(1)
 	{
-    	Msg_FMU_To_Ctrl_Update();           // 接收、解析飞控发送的信息
-    	Msg_Smp_To_Ctrl_Update();           // 接收、解析采集板发送的信息
-        Update_Key_Value();                 // 更新按键状态值
-        Update_Encoder_Value();             // 更新编码器当前值
+		Msg_FMU_To_Ctrl_Update();           // 接收、解析飞控发送的信息
+		Msg_Smp_To_Ctrl_Update();           // 接收、解析采集板发送的信息
+		Update_Key_Value();                 // 更新按键状态值
+		Update_Encoder_Value();             // 更新编码器当前值
 
-       //Msg_FMU_To_Ctrl_Update();           两者都需要调用接收函数，暂未定义// 接收、解析飞控发送的信息
-       //Msg_Smp_To_Ctrl_Update();           // 接收、解析采集板发送的信息
+		Msg_FMU_To_Ctrl_Update();           //两者都需要调用接收函数，暂未定义// 接收、解析飞控发送的信息
+		Msg_Smp_To_Ctrl_Update();           // 接收、解析采集板发送的信息
 
-        //Debug_Message_Handle();          串口三接收数据，暂未定义   //处理调试信息
+       //Debug_Message_Handle();          串口三接收数据，暂未定义   //处理调试信息
 
-        Unlock_FMU_By_Key_Handle();         // 解锁按件信息处理
+		Unlock_FMU_By_Key_Handle();         // 解锁按件信息处理
 
-        SysCtrl_Update_PID();               // 更新系统PID设定值等
-        SysCtrl_Update_Act();               // 更新系统控制状态(动作)
-        SysCtrl_Update_Lost_Info();         //更新系统丢失特征点如何继续追踪信息
+		SysCtrl_Update_PID();               // 更新系统PID设定值等
+		SysCtrl_Update_Act();               // 更新系统控制状态(动作)
+		SysCtrl_Update_Lost_Info();         //更新系统丢失特征点如何继续追踪信息
        //从串口一发送数据 SysCtrl_Update_Msg_Ctrl_To_FMU();   //更新控制板发送给飞控的信息
         //从串口三发送调试信息，串口三暂未定义Dbg_U3_Send_Msg();                  //
 	}

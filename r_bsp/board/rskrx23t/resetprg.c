@@ -179,15 +179,15 @@ void PowerON_Reset_PC(void)
     _INIT_IOLIB();
 #endif
 
-    /* Initialize MCU interrupt callbacks. */
-    bsp_interrupt_open();
-
-    /* Initialize register protection functionality. */
-    bsp_register_protect_open();
-
-    /* Configure the MCU and board hardware */
-    hardware_setup();
-
+//    /* Initialize MCU interrupt callbacks. */
+//    bsp_interrupt_open();
+//
+//    /* Initialize register protection functionality. */
+//    bsp_register_protect_open();
+//
+//    /* Configure the MCU and board hardware */
+//    hardware_setup();
+    HardwareSetup();
     /* Change the MCU's user mode from supervisor to user */
     nop();
     set_psw(PSW_init);      

@@ -23,7 +23,7 @@
 * Device(s)    : R5F523T5AxFM
 * Tool-Chain   : CCRX
 * Description  : This file implements device driver for SCI module.
-* Creation Date: 2017/7/14
+* Creation Date: 2017/7/22
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -38,7 +38,6 @@ Includes
 #include "r_cg_macrodriver.h"
 #include "r_cg_sci.h"
 /* Start user code for include. Do not edit comment generated here */
-#include "ctrl_usart.h"
 /* End user code. Do not edit comment generated here */
 #include "r_cg_userdefine.h"
 
@@ -85,7 +84,7 @@ void R_SCI1_Create(void)
     /* Set control registers */
     SCI1.SMR.BYTE = _00_SCI_CLOCK_PCLK | _00_SCI_STOP_1 | _00_SCI_PARITY_DISABLE | _00_SCI_DATA_LENGTH_8 | 
                     _00_SCI_MULTI_PROCESSOR_DISABLE | _00_SCI_ASYNCHRONOUS_MODE;
-    SCI1.SCMR.BYTE = _00_SCI_SERIAL_MODE | _00_SCI_DATA_INVERT_NONE | _08_SCI_DATA_MSB_FIRST | 
+    SCI1.SCMR.BYTE = _00_SCI_SERIAL_MODE | _00_SCI_DATA_INVERT_NONE | _00_SCI_DATA_LSB_FIRST | 
                      _10_SCI_DATA_LENGTH_8_OR_7 | _62_SCI_SCMR_DEFAULT;
     SCI1.SEMR.BYTE = _00_SCI_LOW_LEVEL_START_BIT | _00_SCI_NOISE_FILTER_DISABLE | _10_SCI_8_BASE_CLOCK | 
                      _00_SCI_BAUDRATE_SINGLE | _00_SCI_BIT_MODULATION_DISABLE;
@@ -164,9 +163,6 @@ MD_STATUS R_SCI1_Serial_Receive(uint8_t * const rx_buf, uint16_t rx_num)
     }
     else
     {
-    	//---------------Modified Here---------------//
-    	U1_Rx_End = No;
-    	//---------------Modified Here---------------//
         g_sci1_rx_count = 0U;
         g_sci1_rx_length = rx_num;
         gp_sci1_rx_address = rx_buf;
@@ -198,9 +194,7 @@ MD_STATUS R_SCI1_Serial_Send(uint8_t * const tx_buf, uint16_t tx_num)
     {
         gp_sci1_tx_address = tx_buf;
         g_sci1_tx_count = tx_num;
-        //---------------Modified Here---------------//
-        U1_Tx_End = No;
-        //---------------Modified Here---------------//
+
         /* Set TXD1 pin */
         PORTD.PMR.BYTE |= 0x08U;
         SCI1.SCR.BIT.TIE = 1U;
@@ -236,7 +230,7 @@ void R_SCI5_Create(void)
     /* Set control registers */
     SCI5.SMR.BYTE = _00_SCI_CLOCK_PCLK | _00_SCI_STOP_1 | _00_SCI_PARITY_DISABLE | _00_SCI_DATA_LENGTH_8 | 
                     _00_SCI_MULTI_PROCESSOR_DISABLE | _00_SCI_ASYNCHRONOUS_MODE;
-    SCI5.SCMR.BYTE = _00_SCI_SERIAL_MODE | _00_SCI_DATA_INVERT_NONE | _08_SCI_DATA_MSB_FIRST | 
+    SCI5.SCMR.BYTE = _00_SCI_SERIAL_MODE | _00_SCI_DATA_INVERT_NONE | _00_SCI_DATA_LSB_FIRST | 
                      _10_SCI_DATA_LENGTH_8_OR_7 | _62_SCI_SCMR_DEFAULT;
     SCI5.SEMR.BYTE = _00_SCI_LOW_LEVEL_START_BIT | _00_SCI_NOISE_FILTER_DISABLE | _10_SCI_8_BASE_CLOCK | 
                      _40_SCI_BAUDRATE_DOUBLE | _00_SCI_BIT_MODULATION_DISABLE;
@@ -315,9 +309,6 @@ MD_STATUS R_SCI5_Serial_Receive(uint8_t * const rx_buf, uint16_t rx_num)
     }
     else
     {
-    	//---------------Modified Here---------------//
-    	U2_Rx_End = No;
-    	//---------------Modified Here---------------//
         g_sci5_rx_count = 0U;
         g_sci5_rx_length = rx_num;
         gp_sci5_rx_address = rx_buf;
@@ -349,9 +340,7 @@ MD_STATUS R_SCI5_Serial_Send(uint8_t * const tx_buf, uint16_t tx_num)
     {
         gp_sci5_tx_address = tx_buf;
         g_sci5_tx_count = tx_num;
-        //---------------Modified Here---------------//
-        U2_Tx_End = No;
-        //---------------Modified Here---------------//
+
         /* Set TXD5 pin */
         PORTB.PMR.BYTE |= 0x04U;
         SCI5.SCR.BIT.TIE = 1U;

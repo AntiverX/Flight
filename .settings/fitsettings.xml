@@ -5,10 +5,15 @@
         <version>3.50</version>
     </selectedModules>
     <selectedModules>
+        <name>r_gpio_rx</name>
+        <version>2.20</version>
+    </selectedModules>
+    <selectedModules>
         <name>r_flash_rx</name>
         <version>2.10</version>
     </selectedModules>
     <installedModules>r_bsp:3.50</installedModules>
+    <installedModules>r_gpio_rx:2.20</installedModules>
     <installedModules>r_flash_rx:2.10</installedModules>
     <fitProject>true</fitProject>
 </FITMODULE>
