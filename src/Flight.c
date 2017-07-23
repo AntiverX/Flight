@@ -64,8 +64,7 @@
 void R_MAIN_UserInit(void)
 {
     /* Start user code. Do not edit comment generated here */
-	R_SCI1_Create();
-	R_SCI5_Create();
+	BEEP_IO_OFF;
 	R_CMT2_Start();						// 启动毫秒定时器
 	SysCtrl_Msg_Ctrl_To_FMU_Init();     // 初始化控制板发送给飞控的信息
 	Msg_Ctrl_To_Smp_Init();             // 初始化控制板发送给采集板的信息
