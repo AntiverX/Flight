@@ -22,11 +22,11 @@
 #define SW1_IO_LEVEL                HAL_GPIO_ReadPin(SW1_GPIO_Port, SW1_Pin)
 #define SW2_IO_LEVEL                HAL_GPIO_ReadPin(SW2_GPIO_Port, SW2_Pin)
 
-#define SW1_IO_LEVEL_PRESSED        GPIO_PIN_RESET
-#define SW1_IO_LEVEL_RELEASE        GPIO_PIN_SET
+#define SW1_IO_LEVEL_PRESSED        PORTB.PIDR.BIT.B6 = 0
+#define SW1_IO_LEVEL_RELEASE        PORTB.PIDR.BIT.B6 = 1
 
-#define SW2_IO_LEVEL_PRESSED        GPIO_PIN_RESET
-#define SW2_IO_LEVEL_RELEASE        GPIO_PIN_SET
+#define SW2_IO_LEVEL_PRESSED        PORTB.PIDR.BIT.B7 = 0
+#define SW2_IO_LEVEL_RELEASE        PORTB.PIDR.BIT.B7 = 1
 
 #define IS_SW1_PRESSED              (SW1_IO_LEVEL_PRESSED == SW1_IO_LEVEL)
 #define IS_SW1_RELEASED             (SW1_IO_LEVEL_RELEASE == SW1_IO_LEVEL)
@@ -37,8 +37,8 @@
 // 控制板按键识别
 typedef enum
 {
-    SW1_,         // 0
-    SW2_,         // 1
+    SW1,         // 0
+    SW2,         // 1
     
     Key_Num,    // 2
 }KeyID_t;
@@ -46,8 +46,8 @@ typedef enum
 // 按键状态
 typedef enum
 {
-    Key_Release = 0,        // 按键状态：被释放
-    Key_Pressed,            // 按键状态：被按下
+	Key_Release = 0,        // 按键状态：被按下
+    Key_Pressed,            // 按键状态：被释放
 }Key_Status_t;
 
 // 按键数据类型

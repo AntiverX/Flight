@@ -93,6 +93,7 @@ extern YesNo_t Msg_FMU_To_Ctrl_Update(void)
                 // 本次通信异常，上次也是出错了
                 else
                 {
+                	LED_B_IO_OFF;
                     New_Pkg_Offset = 0;
                     New_Pkg_Length = sizeof(Msg_FMUToCtrl_t);
                 }
@@ -119,9 +120,8 @@ extern YesNo_t Msg_FMU_To_Ctrl_Update(void)
         {
             Msg_Ctrl_To_Smp_Update();
         }
+        U1_Rx_End = No;
         R_SCI1_Serial_Receive(&U1RxBuf[New_Pkg_Offset],New_Pkg_Length);
-        //----------------------------------Modified Here.-----------------------------------------//
-        //Usart_Receive_IT(&huart1, &U1RxBuf[New_Pkg_Offset], New_Pkg_Length);
     }
     return UpdateFlag;
 }

@@ -17,12 +17,12 @@
 #define LED_B_IO_LEVEL_ON       GPIO_PIN_RESET
 #define LED_B_IO_LEVEL_OFF      GPIO_PIN_SET
 
-#define LED_R_IO_ON             PORTA.PODR.BIT.B3 = 1
-#define LED_R_IO_OFF            PORTA.PODR.BIT.B3 = 0
+#define LED_R_IO_ON             PORTA.PODR.BIT.B3 = 0
+#define LED_R_IO_OFF            PORTA.PODR.BIT.B3 = 1
 #define LED_R_IO_TOOGLE         PORTA.PODR.BIT.B3 = ~PORTA.PODR.BIT.B3
 
-#define LED_B_IO_ON             PORT9.PODR.BIT.B4 = 1
-#define LED_B_IO_OFF            PORT9.PODR.BIT.B4 = 0
+#define LED_B_IO_ON             PORT9.PODR.BIT.B4 = 0
+#define LED_B_IO_OFF            PORT9.PODR.BIT.B4 = 1
 #define LED_B_IO_TOOGLE         PORT9.PODR.BIT.B4 =  ~PORT9.PODR.BIT.B4
 
 #define LED_SIGNAL_IO_ON PORT7.PODR.BIT.B6 = 0

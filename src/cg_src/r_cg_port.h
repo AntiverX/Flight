@@ -23,7 +23,7 @@
 * Device(s)    : R5F523T5AxFM
 * Tool-Chain   : CCRX
 * Description  : This file implements device driver for Port module.
-* Creation Date: 2017/7/22
+* Creation Date: 2017/7/27
 ***********************************************************************************************************************/
 #ifndef PORT_H
 #define PORT_H

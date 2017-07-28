@@ -16,10 +16,8 @@
 typedef struct
 {
     uint16 St;              // 帧头 固定内容 0xAAAA
-    
     uint32 ms;              // 时间戳 系统启动后运行了多长时间了 time stamp
     uint32 Seq;             // 帧序列号 +1 every time
-    
     uint16 Valid_Rol_Pos:1; // 1    横滚 位置环 是否有效
     uint16 Valid_Rol_Spd:1; // 2    横滚 速度环 是否有效
     uint16 Valid_Pit_Pos:1; // 3    俯仰 位置环 是否有效
@@ -36,7 +34,6 @@ typedef struct
     int16 Smp_Pit_Spd;      // 俯仰 速度环 采样值
     int16 Smp_Yaw_Pos;      // 偏航 位置环 采样值
     int16 Smp_Yaw_Spd;      // 偏航 速度环 采样值
-    
     uint16 Sp;              // 帧尾 固定内容 0x5555
 }Msg_SmpToCtrl_Pkg_t;
 

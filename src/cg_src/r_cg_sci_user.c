@@ -23,7 +23,7 @@
 * Device(s)    : R5F523T5AxFM
 * Tool-Chain   : CCRX
 * Description  : This file implements device driver for SCI module.
-* Creation Date: 2017/7/22
+* Creation Date: 2017/7/27
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -40,6 +40,7 @@ Includes
 /* Start user code for include. Do not edit comment generated here */
 #include "ctrl_led.h"
 #include "ctrl_beep.h"
+#include "ctrl_usart.h"
 /* End user code. Do not edit comment generated here */
 #include "r_cg_userdefine.h"
 
@@ -163,7 +164,7 @@ static void r_sci1_receiveerror_interrupt(void)
 static void r_sci1_callback_transmitend(void)
 {
     /* Start user code. Do not edit comment generated here */
-
+	U1_Tx_End = Yes;
     /* End user code. Do not edit comment generated here */
 }
 /***********************************************************************************************************************
@@ -175,8 +176,7 @@ static void r_sci1_callback_transmitend(void)
 static void r_sci1_callback_receiveend(void)
 {
     /* Start user code. Do not edit comment generated here */
-	BEEP_IO_TOOGLE;
-	LED_SIGNAL_IO_TOOGLE;
+	U1_Rx_End = Yes;
     /* End user code. Do not edit comment generated here */
 }
 /***********************************************************************************************************************
@@ -295,6 +295,7 @@ static void r_sci5_receiveerror_interrupt(void)
 static void r_sci5_callback_transmitend(void)
 {
     /* Start user code. Do not edit comment generated here */
+	U2_Tx_End = Yes;
     /* End user code. Do not edit comment generated here */
 }
 /***********************************************************************************************************************
@@ -306,8 +307,7 @@ static void r_sci5_callback_transmitend(void)
 static void r_sci5_callback_receiveend(void)
 {
     /* Start user code. Do not edit comment generated here */
-	BEEP_IO_TOOGLE;
-	LED_SIGNAL_IO_TOOGLE;
+	U2_Rx_End = Yes;
     /* End user code. Do not edit comment generated here */
 }
 /***********************************************************************************************************************

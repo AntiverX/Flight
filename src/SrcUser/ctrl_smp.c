@@ -41,7 +41,6 @@ extern YesNo_t Msg_Smp_To_Ctrl_Update(void)
     uint16 i;
     
     UpdateFlag = No;
-    
     // received package from vision sample board
     if(Yes == U2_Rx_End)
     {
@@ -68,7 +67,6 @@ extern YesNo_t Msg_Smp_To_Ctrl_Update(void)
             else
             {
             	LED_R_IO_ON;
-                
                 // maybe everything is ok last time, but error occurred this time
                 if(0 == New_Pkg_Offset)
                 {
@@ -101,6 +99,7 @@ extern YesNo_t Msg_Smp_To_Ctrl_Update(void)
         else
         {
         	LED_R_IO_ON;
+        	LED_SIGNAL_IO_ON;
             New_Pkg_Offset = 0;
             New_Pkg_Length = sizeof(Msg_SmpToCtrl_t);
         }
@@ -110,9 +109,11 @@ extern YesNo_t Msg_Smp_To_Ctrl_Update(void)
         En_Update_Act = UpdateFlag;
         //----------------------------------Modified Here.-----------------------------------------//
 //        Usart_Receive_IT(&huart2, &U2RxBuf[New_Pkg_Offset], New_Pkg_Length);
+        U2_Rx_End = No;
         R_SCI5_Serial_Receive(&U2RxBuf[New_Pkg_Offset], New_Pkg_Length);
     }
-    
+    if(Yes == UpdateFlag)
+    	LED_SIGNAL_IO_TOOGLE;
     return UpdateFlag;
 }
 

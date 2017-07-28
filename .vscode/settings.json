@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "ctrl_smp.h": "c"
+        "ctrl_smp.h": "c",
+        "ctrl_control.h": "c",
+        "ctrl_key.h": "c"
     }
 }

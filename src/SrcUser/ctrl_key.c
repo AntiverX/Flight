@@ -11,6 +11,7 @@
 #include "ctrl_control.h"
 #include "r_cg_macrodriver.h"
 #include "r_cg_port.h"
+#include "ctrl_led.h"
 
 extern Key_t Key[Key_Num] = {Key_Release};
 
@@ -36,6 +37,7 @@ extern void Update_Key_Value(void)
     {
         Key[SW2].Current = Key_Release;
     }
+
 }
 
 // 更新按键上电初始状态
@@ -58,10 +60,10 @@ extern void Unlock_FMU_By_Key_Handle(void)
             SW1(控制板上 左边的按键) 按下，解锁飞控后，等待遥控器开启才执行程控任务
             SW2(控制板上 右边的按键) 按下，解锁飞控后，直接执行程控任务
     */
-
     // 当有按键按下
     if((Key_Pressed==Key[SW1].Current) || (Key_Pressed==Key[SW2].Current))
     {
+
         StartUnlock_By_Key = Yes;                       // 进入解锁状态
 
         HomeHeightNew_cm = Get_Height();                // 获取当前的高度(适应不同机型 通过按键解锁时 测量的高度就是Home高度值)
@@ -81,10 +83,11 @@ extern void Unlock_FMU_By_Key_Handle(void)
             DemoCtrlType = DemoCtrl_RC_Off;             // 默认遥控器关闭情况下直接执行程控任务
             SysCtrl_Modify_RC_Offset();
         }
-
         SysCtrl_Set_Demo_By_Encoder();                  // 根据编码器的值，设定执行哪个Demo
     }
     else
+    {
         StartUnlock_By_Key = No;
+    }
 }
 

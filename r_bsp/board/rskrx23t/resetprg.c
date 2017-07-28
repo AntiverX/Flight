@@ -187,6 +187,7 @@ void PowerON_Reset_PC(void)
 //
 //    /* Configure the MCU and board hardware */
 //    hardware_setup();
+
     HardwareSetup();
     /* Change the MCU's user mode from supervisor to user */
     nop();

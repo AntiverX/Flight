@@ -15,7 +15,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="mot" artifactName="Flight" buildArtefactType="com.renesas.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=com.renesas.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf *.sni *.dbg *.lst *.lis *.lpp *.map *.x *.lbp src/*.src src/*.p src/*.pp src/*.mrc *.bls *.libelf *.lbk *.abs *.fsy" description="Debug on hardware" id="com.renesas.cdt.rxc.hardwaredebug.win32.configuration.Id.1464869522" name="HardwareDebug" parent="com.renesas.cdt.rxc.hardwaredebug.win32.configuration.Id">
+				<configuration artifactExtension="hex" artifactName="Flight" buildArtefactType="com.renesas.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=com.renesas.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf *.sni *.dbg *.lst *.lis *.lpp *.map *.x *.lbp src/*.src src/*.p src/*.pp src/*.mrc *.bls *.libelf *.lbk *.abs *.fsy" description="Debug on hardware" id="com.renesas.cdt.rxc.hardwaredebug.win32.configuration.Id.1464869522" name="HardwareDebug" parent="com.renesas.cdt.rxc.hardwaredebug.win32.configuration.Id">
 					<folderInfo id="com.renesas.cdt.rxc.hardwaredebug.win32.configuration.Id.1464869522." name="/" resourcePath="">
 						<toolChain id="com.renesas.cdt.rxc.hardwaredebug.win32.toolChain.Id.476272255" name="Renesas RXC Toolchain" superClass="com.renesas.cdt.rxc.hardwaredebug.win32.toolChain.Id" targetTool="com.renesas.cdt.rxc.hardwaredebug.win32.tool.convertor.Id">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF;org.eclipse.cdt.core.PE" id="com.renesas.cdt.rxc.hardwaredebug.win32.targetPlatform.Id.2123954783" isAbstract="false" osList="win32" superClass="com.renesas.cdt.rxc.hardwaredebug.win32.targetPlatform.Id"/>
@@ -149,12 +149,63 @@
 									<listOptionValue builtIn="false" value="D_2=R_2"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.renesas.Linker.option.linkOrderList.1053008249" name="" superClass="com.renesas.cdt.renesas.Linker.option.linkOrderList" valueType="stringList">
-									<listOptionValue builtIn="false" value="&quot;.\src\3.obj&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;.\3.lib&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/cg_src\r_cg_cgc.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/cg_src\r_cg_cgc_user.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/cg_src\r_cg_cmt.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/cg_src\r_cg_cmt_user.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/cg_src\r_cg_hardware_setup.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/cg_src\r_cg_port.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/cg_src\r_cg_port_user.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/cg_src\r_cg_sci.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/cg_src\r_cg_sci_user.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/SrcUser\ctrl_basic.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/SrcUser\ctrl_beep.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/SrcUser\ctrl_control.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/SrcUser\ctrl_debug.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/SrcUser\ctrl_drone_status.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/SrcUser\ctrl_encoder.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/SrcUser\ctrl_flash.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/SrcUser\ctrl_fmu.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/SrcUser\ctrl_key.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/SrcUser\ctrl_led.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/SrcUser\ctrl_map.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/SrcUser\ctrl_pid.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/SrcUser\ctrl_serial_graph.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/SrcUser\ctrl_smp.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/SrcUser\ctrl_two_sta_dev.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/SrcUser\ctrl_usart.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src\Flight.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_gpio_rx/src/targets/rx23t\r_gpio_rx23t.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_gpio_rx/src\r_gpio_rx.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_flash_rx/src/flash_type_4\r_flash_type4.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_flash_rx/src/flash_type_3\r_flash_type3.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_flash_rx/src/flash_type_2\r_flash_type2.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_flash_rx/src/flash_type_1\r_codeflash.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_flash_rx/src/flash_type_1\r_codeflash_extra.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_flash_rx/src/flash_type_1\r_dataflash.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_flash_rx/src/flash_type_1\r_flash_type1.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_flash_rx/src/flash_type_1\r_flash_utils.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_flash_rx/src\r_flash_rx.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_bsp/mcu/rx23t\cpu.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_bsp/mcu/rx23t\locking.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_bsp/mcu/rx23t\mcu_clocks.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_bsp/mcu/rx23t\mcu_init.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_bsp/mcu/rx23t\mcu_interrupts.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_bsp/mcu/rx23t\mcu_locks.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_bsp/mcu/all\r_bsp_common.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_bsp/board/rskrx23t\dbsct.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_bsp/board/rskrx23t\hwsetup.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_bsp/board/rskrx23t\lowlvl.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_bsp/board/rskrx23t\lowsrc.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_bsp/board/rskrx23t\resetprg.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_bsp/board/rskrx23t\sbrk.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\r_bsp/board/rskrx23t\vecttbl.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\Flight.lib&quot;"/>
 								</option>
-								<option id="com.renesas.cdt.renesas.Linker.option.typeOfOutputFileOption.501756996" name="Type of output file:" superClass="com.renesas.cdt.renesas.Linker.option.typeOfOutputFileOption" value="com.renesas.cdt.renesas.Linker.option.typeOfOutputFileOption.stypeViaAbsolute" valueType="enumerated"/>
+								<option id="com.renesas.cdt.renesas.Linker.option.typeOfOutputFileOption.501756996" name="Type of output file:" superClass="com.renesas.cdt.renesas.Linker.option.typeOfOutputFileOption" value="com.renesas.cdt.renesas.Linker.option.typeOfOutputFileOption.hexViaAbsoulate" valueType="enumerated"/>
 								<option defaultValue="In output load module" id="com.renesas.cdt.renesas.Linker.option.debugInformation.1851858240" name="Debug information" superClass="com.renesas.cdt.renesas.Linker.option.debugInformation" value="com.renesas.cdt.renesas.Linker.option.debugInformation.outputLoadModule" valueType="enumerated"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="true" id="com.renesas.cdt.renesas.Linker.option.linkOrder.1205989270" name="%option.name.179" superClass="com.renesas.cdt.renesas.Linker.option.linkOrder" valueType="stringList"/>
+								<option id="com.renesas.cdt.renesas.Linker.option.outputFilePath.1579481502" name="Output file path" superClass="com.renesas.cdt.renesas.Linker.option.outputFilePath" value="${CONFIGDIR:/${ProjName}}.hex" valueType="string"/>
 							</tool>
 							<tool id="%com.renesas.cdt.rxc.hardwaredebug.win32.tool.libgen.Id.722073434" name="Standard Library" superClass="%com.renesas.cdt.rxc.hardwaredebug.win32.tool.libgen.Id">
 								<option id="com.renesas.cdt.rxc.HardwareDebug.StandardLibrary.option.cpu.934278128" name="CPU" superClass="com.renesas.cdt.rxc.HardwareDebug.StandardLibrary.option.cpu" value="com.renesas.cdt.rxc.HardwareDebug.StandardLibrary.option.cpu.rx200" valueType="enumerated"/>

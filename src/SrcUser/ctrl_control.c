@@ -216,9 +216,9 @@ static void SysCtrl_Update_Act_Find_St(void)
             }
         }
         
-        if(NodeShape_StartPoint == NodeShape_Curt)
-            //Beep_Off();
-        	;
+//        if(NodeShape_StartPoint == NodeShape_Curt)
+//            //Beep_Off();
+//        	;
     }
     // 超时
     else
@@ -719,6 +719,12 @@ static void SysCtrl_Update_PID_Change_Demo_StToSp(void)
 {
     switch(Demo_StToSp_Act)
     {
+		case Demo_StToSp_Act_Climb:
+		{
+			//SysPID[Pit].Out_Int16 = -20;
+			//SysPID[Rol].Out_Int16 = -50;
+		}
+		break;
         case Demo_StToSp_Act_ToSp:
         {
             SysPID[Pit].Out_Int16 = -75;
@@ -760,20 +766,20 @@ extern void SysCtrl_Modify_RC_Offset(void)
         RC_Offset_Rol = RC_Offset.RC_Rol_Offset;
         RC_Offset_Pit = RC_Offset.RC_Pit_Offset;
         //----------------------------------Modified Here.-----------------------------------------//
-        PORTA.PODR.BIT.B3 = 0;
-        PORT9.PODR.BIT.B4 = 1;
+        //PORTA.PODR.BIT.B3 = 0;
+        //PORT9.PODR.BIT.B4 = 1;
 //        LED_R_IO_OFF;
 //        LED_B_IO_ON;
     }
     else
     {
     	//----------------------------------Modified Here.-----------------------------------------//
-    	PORTA.PODR.BIT.B3 = 1;
-    	PORT9.PODR.BIT.B4 = 0;
+    	//PORTA.PODR.BIT.B3 = 1;
+    	//PORT9.PODR.BIT.B4 = 0;
     	//        LED_R_IO_ON;
 //        LED_B_IO_OFF;
-        while(1)
-            ;
+//        while(1)
+//            ;
     }
 }
 

@@ -70,27 +70,27 @@ static void output_ports_configure(void)
 {
     /* Enable LEDs. */
     /* Start with LEDs off. */
-    LED0 = LED_OFF;
-    LED1 = LED_OFF;
-    LED2 = LED_OFF;
-    LED3 = LED_OFF;
-
-    /* Set LED pins as outputs. */
-    LED0_PDR = 1;
-    LED1_PDR = 1;
-    LED2_PDR = 1;
-    LED3_PDR = 1;
-
-    /* Enable switches. */
-    /* Set pins as inputs. */
-    SW1_PDR = 0;
-    SW2_PDR = 0;
-    SW3_PDR = 0;
-
-    /* Set port mode registers for switches. */
-    SW1_PMR = 0;
-    SW2_PMR = 0;
-    SW3_PMR = 0;
+//    LED0 = LED_OFF;
+//    LED1 = LED_OFF;
+//    LED2 = LED_OFF;
+//    LED3 = LED_OFF;
+//
+//    /* Set LED pins as outputs. */
+//    LED0_PDR = 1;
+//    LED1_PDR = 1;
+//    LED2_PDR = 1;
+//    LED3_PDR = 1;
+//
+//    /* Enable switches. */
+//    /* Set pins as inputs. */
+//    SW1_PDR = 0;
+//    SW2_PDR = 0;
+//    SW3_PDR = 0;
+//
+//    /* Set port mode registers for switches. */
+//    SW1_PMR = 0;
+//    SW2_PMR = 0;
+//    SW3_PMR = 0;
     
     /* Unlock MPC registers to enable writing to them. */
     R_BSP_RegisterProtectDisable(BSP_REG_PROTECT_MPC);
