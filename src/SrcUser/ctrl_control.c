@@ -231,7 +231,6 @@ static void SysCtrl_Update_Act_Demo_St(void)
 {
     static uint32 Hover_Start_Stamp;
     uint32 Sys_ms_Now;
-    
     switch(Demo_St_Act)
     {
         case Demo_St_Act_Climb:
@@ -239,6 +238,7 @@ static void SysCtrl_Update_Act_Demo_St(void)
             if(     (SysPID[Alt].PID[Pos].err_abs)
                 &&  (SysPID[Alt].PID[Pos].err_abs<10)    )
             {
+
                 Demo_St_Act = Demo_St_Act_Stable;
                 Demo_LostInfo.FeatureValid = No;
             }
@@ -257,6 +257,7 @@ static void SysCtrl_Update_Act_Demo_St(void)
                 &&  (SysPID[Pit].PID[Spd].err_abs)
                 &&  (SysPID[Pit].PID[Spd].err_abs < 2)  )
             {
+            	BEEP_IO_ON;
                 Demo_St_Act = Demo_St_Act_Hover;
                 Demo_LostInfo.FeatureValid = No;
                 Hover_Start_Stamp = Sys_ms;
@@ -268,9 +269,12 @@ static void SysCtrl_Update_Act_Demo_St(void)
             Sys_ms_Now = Sys_ms;
             if((Sys_ms_Now-Hover_Start_Stamp) > (5*1000))
             {
-                Demo_St_Act = Demo_St_Act_Land;
-                Demo_LostInfo.FeatureValid = No;
-                DroneLanding = Yes;
+                #if(DBG)
+                #else
+                    Demo_St_Act = Demo_St_Act_Land;
+                    Demo_LostInfo.FeatureValid = No;
+                    DroneLanding = Yes;
+                #endif //DBG
             }
         }
         break;
@@ -316,9 +320,9 @@ static void SysCtrl_Update_Act_Demo_StToSp(void)
         case Demo_StToSp_Act_Stable:
         {
             if(     (SysPID[Rol].PID[Pos].err_abs)
-                &&  (SysPID[Rol].PID[Pos].err_abs < 40)
+                &&  (SysPID[Rol].PID[Pos].err_abs < 50)  //之前是40
                 &&  (SysPID[Pit].PID[Pos].err_abs)
-                &&  (SysPID[Pit].PID[Pos].err_abs < 40)
+                &&  (SysPID[Pit].PID[Pos].err_abs < 50)  //之前是40
                 &&  (SysPID[Alt].PID[Pos].err_abs)
                 &&  (SysPID[Alt].PID[Pos].err_abs < 10)  )
             {
@@ -713,6 +717,14 @@ static void SysCtrl_Update_PID_Change_Find_St(void)
 
 static void SysCtrl_Update_PID_Change_Demo_St(void)
 {
+	switch(Demo_St_Act)
+	{
+		case Demo_St_Act_Climb:
+		{
+
+		}
+		break;
+	}
 }
 
 static void SysCtrl_Update_PID_Change_Demo_StToSp(void)
@@ -721,13 +733,12 @@ static void SysCtrl_Update_PID_Change_Demo_StToSp(void)
     {
 		case Demo_StToSp_Act_Climb:
 		{
-			//SysPID[Pit].Out_Int16 = -20;
-			//SysPID[Rol].Out_Int16 = -50;
+
 		}
 		break;
         case Demo_StToSp_Act_ToSp:
         {
-            SysPID[Pit].Out_Int16 = -75;
+            SysPID[Pit].Out_Int16 = -55;
         }
         break;
     }
@@ -849,6 +860,7 @@ extern void SysCtrl_Update_PID_Set(void)
     SysPID[Yaw].PID[Pos].set = 0;
     SysPID[Yaw].PID[Spd].set = SysPID[Yaw].PID[Pos].err / SysPID[Yaw].K_PosErr_To_SpdSet;
     
+
     if(NodeShape_Curt == NodeShape_StartPoint)
     {
         switch(SysDemo)
@@ -888,6 +900,10 @@ extern void SysCtrl_Update_PID_Sample(void)
 
 extern void SysCtrl_Update_PID_Error(void)
 {
+    #if(DBG)
+        Demo_LostInfo.FeatureValid = Yes;
+    #endif //DBG
+
     if(Yes == Demo_LostInfo.FeatureValid)
     {
         PID_Update_Error(&SysPID[Rol].PID[Pos], SysPID[Rol].PID[Pos].valid);
@@ -969,6 +985,10 @@ extern void SysCtrl_Update_PID_Calculate(void)
 
 extern void SysCtrl_Update_PID_Change(void)
 {
+    #if(DBG)
+    NodeShape_Curt = NodeShape_StartPoint;
+    #endif
+
     if(NodeShape_Curt == NodeShape_StartPoint)
     {
         switch(SysDemo)
@@ -990,6 +1010,7 @@ extern void SysCtrl_Update_Act(void)
     // 当控制状态更新使能有效
     if(Yes == En_Update_Act)
     {
+
         // 复位标志位
         En_Update_Act = No;
         
@@ -999,8 +1020,12 @@ extern void SysCtrl_Update_Act(void)
             // 不更新状态(不做任何事情 等待通过遥控器开启程控)
             return;
         }
-        
+
         // 如果已经到达起始点位置 则根据旋转编码器设定的 Demo 执行程控任务
+        #if(DBG)
+            NodeShape_Curt = NodeShape_StartPoint;
+		#endif //DBG
+        
         if(NodeShape_Curt == NodeShape_StartPoint)
         {
             switch(SysDemo)
@@ -1008,9 +1033,9 @@ extern void SysCtrl_Update_Act(void)
                 case Demo_St:       SysCtrl_Update_Act_Demo_St();        break;
                 case Demo_StToSp:   SysCtrl_Update_Act_Demo_StToSp();    break;
                 case Demo_StLdLu:   SysCtrl_Update_Act_Demo_StLdLu();    break;
-            }
+           }
         }
-        // 否则先找起点
+       // 否则先找起点
         else
         {
             SysCtrl_Update_Act_Find_St();
@@ -1020,7 +1045,11 @@ extern void SysCtrl_Update_Act(void)
 
 // 更新特征点丢失后追踪、找回信息
 extern void SysCtrl_Update_Lost_Info(void)
-{        
+{
+    #if(DBG)
+        NodeShape_Curt = NodeShape_StartPoint;
+    #endif
+    
     if(NodeShape_Curt == NodeShape_StartPoint)
     {
         switch(SysDemo)
@@ -1079,11 +1108,23 @@ extern void SysCtrl_Update_Msg_Ctrl_To_FMU_Type(Msg_CtrlToFMU_Type_t MsgType)
         break;
         case Auto_On:
         {
+            #if(DBG)
+                AutoCtrl_HeightAbove_35cm = Yes;
+            #endif
+            
             if(Yes == AutoCtrl_HeightAbove_35cm)
             {
-                Msg_CtrlToFMU.Pkg.Rol = SysPID[Rol].Out_Int16 + RC_Offset_Rol;
-                Msg_CtrlToFMU.Pkg.Pit = SysPID[Pit].Out_Int16 + RC_Offset_Pit;
+                Msg_CtrlToFMU.Pkg.Rol = SysPID[Rol].Out_Int16 + -40;
+                Msg_CtrlToFMU.Pkg.Pit = SysPID[Pit].Out_Int16 + -30;
+                //Msg_CtrlToFMU.Pkg.Rol = SysPID[Rol].Out_Int16 + RC_Offset_Rol;
+                //Msg_CtrlToFMU.Pkg.Pit = SysPID[Pit].Out_Int16 + RC_Offset_Pit;
                 Msg_CtrlToFMU.Pkg.Yaw = SysPID[Yaw].Out_Int16;
+            }
+            else if(No == AutoCtrl_HeightAbove_35cm && No == DroneLanding)
+            {
+            	//微调
+            	//Msg_CtrlToFMU.Pkg.Rol = SysPID[Rol].Out_Int16 + -40;
+                //Msg_CtrlToFMU.Pkg.Pit = -30;
             }
             else
             {
@@ -1180,7 +1221,6 @@ extern void SysCtrl_Update_Msg_Ctrl_To_FMU(void)
         }
         
         R_SCI1_Serial_Send(Msg_CtrlToFMU.Buf,sizeof(Msg_CtrlToFMU_t));
-//        Usart_Send_Data(&huart1, Msg_CtrlToFMU.Buf, sizeof(Msg_CtrlToFMU_t));
     }
 }
 

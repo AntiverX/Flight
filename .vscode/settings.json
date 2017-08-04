@@ -2,6 +2,8 @@
     "files.associations": {
         "ctrl_smp.h": "c",
         "ctrl_control.h": "c",
-        "ctrl_key.h": "c"
+        "ctrl_key.h": "c",
+        "ctrl_fmu.h": "c",
+        "ctrl_pid.h": "c"
     }
 }

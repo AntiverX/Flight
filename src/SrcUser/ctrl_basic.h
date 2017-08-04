@@ -67,5 +67,7 @@ extern void Constraint_By_Abs(float* pFloatNum, float AbsMax);      // 绝对值
 extern float DataFilter(float* pDataBuf, uint16 Num);               // 数据滤波算法
 extern void Data_Quick_Sort(float* pDataBuf, uint16 Num);           // 数据快速排序
 
+#define DBG 1
+
 #endif	// __CTRL_BASIC_H__
 

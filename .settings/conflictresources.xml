@@ -73,6 +73,29 @@
             </pinInfo>
         </peripheralInfo>
         <peripheralInfo>
+            <peripheralName>rspi0</peripheralName>
+            <pinInfo>
+                <pinName>SSLA0</pinName>
+                <pinPort>P30</pinPort>
+                <pinOption>FIXED</pinOption>
+            </pinInfo>
+            <pinInfo>
+                <pinName>RSPCKA</pinName>
+                <pinPort>P24</pinPort>
+                <pinOption>FIXED</pinOption>
+            </pinInfo>
+            <pinInfo>
+                <pinName>MOSIA</pinName>
+                <pinPort>P23</pinPort>
+                <pinOption>FIXED</pinOption>
+            </pinInfo>
+            <pinInfo>
+                <pinName>MISOA</pinName>
+                <pinPort>P22</pinPort>
+                <pinOption>FIXED</pinOption>
+            </pinInfo>
+        </peripheralInfo>
+        <peripheralInfo>
             <peripheralName>port7</peripheralName>
             <pinInfo>
                 <pinName>P76</pinName>

@@ -13,6 +13,7 @@
 #include "r_cg_macrodriver.h"
 #include "r_cg_sci.h"
 
+
 extern Msg_SmpToCtrl_t Msg_SmpToCtrl = {0};
 
 extern YesNo_t En_Update_PID = No;                      // 系统PID运算更新使能，每当接收到采集板的信息，才更新PID运算
@@ -31,6 +32,52 @@ extern void Msg_Ctrl_To_Smp_Init(void)
     功能：接收、处理采集板发送给控制板的信息
     返回：是否正确接收到了采集板的数据包
 */
+
+static void Ctrl_Smp_Update_Sample_Speed(void)
+{
+	static YesNo_t Valid_Rol_Pos_Last = No;
+	static YesNo_t Valid_Pit_Pos_Last = No;
+	static YesNo_t Valid_Rol_Pos = No;
+	static YesNo_t Valid_Pit_Pos = No;
+	static int16 Smp_Rol_Pos_Last;
+	static int16 Smp_Pit_Pos_Last;
+	static int16 Smp_Rol_Pos;
+	static int16 Smp_Pit_Pos;
+
+
+	Valid_Rol_Pos_Last = Valid_Rol_Pos;
+	Valid_Pit_Pos_Last = Valid_Pit_Pos;
+	Smp_Rol_Pos_Last = Smp_Rol_Pos;
+	Smp_Pit_Pos_Last = Smp_Pit_Pos;
+
+	Valid_Rol_Pos = Msg_SmpToCtrl.Pkg.Valid_Rol_Pos;
+	Valid_Pit_Pos = Msg_SmpToCtrl.Pkg.Valid_Pit_Pos;
+
+	Smp_Rol_Pos = Msg_SmpToCtrl.Pkg.Smp_Rol_Pos;
+	Smp_Pit_Pos = Msg_SmpToCtrl.Pkg.Smp_Pit_Pos;
+
+	if(Valid_Rol_Pos_Last && Valid_Rol_Pos)
+	{
+		Msg_SmpToCtrl.Pkg.Valid_Rol_Spd = Yes;
+		Msg_SmpToCtrl.Pkg.Smp_Rol_Spd = Smp_Rol_Pos - Smp_Rol_Pos_Last;
+	}
+	else
+	{
+		Msg_SmpToCtrl.Pkg.Valid_Rol_Spd = No;
+	}
+
+	if(Valid_Pit_Pos_Last && Valid_Pit_Pos)
+	{
+		Msg_SmpToCtrl.Pkg.Valid_Pit_Spd = Yes;
+		Msg_SmpToCtrl.Pkg.Smp_Pit_Spd = Smp_Pit_Pos - Smp_Pit_Pos_Last;
+	}
+	else
+	{
+		Msg_SmpToCtrl.Pkg.Valid_Pit_Spd = No;
+	}
+}
+
+
 extern YesNo_t Msg_Smp_To_Ctrl_Update(void)
 {
     YesNo_t UpdateFlag;
@@ -58,6 +105,23 @@ extern YesNo_t Msg_Smp_To_Ctrl_Update(void)
                 {
                     Msg_SmpToCtrl.Buf[i] = pNewMsg->Buf[i];
                 }
+
+				#if(DBG)
+					// 对采集进行角度补偿
+					#define K_1Pix_nCM      ((double)0.265)
+					// 融合高度、角度信息 对视觉采集的信息进行校正(修正、补偿)
+					//void Vision_Sample_Calibration(void)
+					//{
+						//Rol_Smp_Raw = VisioInfo[DOF_Rol].Pos_Sample;
+						//Pit_Smp_Raw = VisioInfo[DOF_Pit].Pos_Sample;
+
+				Msg_SmpToCtrl.Pkg.Smp_Rol_Pos -= ((tan((double)Msg_CtrlToSmp.Pkg.AHRS_Rol_1000/1000.0) * Msg_CtrlToSmp.Pkg.Alt_Sonar)/K_1Pix_nCM);
+				Msg_SmpToCtrl.Pkg.Smp_Pit_Pos -= ((tan((double)Msg_CtrlToSmp.Pkg.AHRS_Pit_1000/1000.0) * Msg_CtrlToSmp.Pkg.Alt_Sonar)/K_1Pix_nCM);
+                Ctrl_Smp_Update_Sample_Speed();
+
+				#endif	// (DBG_OPENMV)
+
+
                 UpdateFlag = Yes;
                 New_Pkg_Offset = 0;
                 New_Pkg_Length = sizeof(Msg_SmpToCtrl_t);
@@ -114,6 +178,7 @@ extern YesNo_t Msg_Smp_To_Ctrl_Update(void)
     }
     if(Yes == UpdateFlag)
     	LED_SIGNAL_IO_TOOGLE;
+
     return UpdateFlag;
 }
 

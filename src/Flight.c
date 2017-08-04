@@ -96,6 +96,10 @@ void main(void)
 	R_MAIN_UserInit();
 	while(1)
 	{
+		#if(DBG)
+		#else
+		#endif //DBG
+
         Update_Key_Value();                 // 更新按键状态值 上电后按下按键，进入一键启动
         Update_Encoder_Value();             // 更新编码器当前值 编码器的值决定执行什么程控任务
 

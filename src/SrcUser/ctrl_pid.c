@@ -77,8 +77,8 @@ extern void PID_Parameter_Init(void)
     SysPID[Rol].PID[Pos].i_act_err_abs_max = 80;
     
     // 横滚 速度环 控制参数 P、I、D、采样缓存个数、设定值、设定值最小值、设定值最大值、积分项绝对值最大值、积分分离最大误差值
-    SysPID[Rol].PID[Spd].p = -32.0;
-    SysPID[Rol].PID[Spd].i = -1.00;
+    SysPID[Rol].PID[Spd].p = -32.0;//
+    SysPID[Rol].PID[Spd].i = -1.00;//-1
     SysPID[Rol].PID[Spd].d = -20.0;
     SysPID[Rol].PID[Spd].sample_cache_max = 5;
     SysPID[Rol].PID[Spd].set = 0;
